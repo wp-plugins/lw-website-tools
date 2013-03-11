@@ -34,10 +34,10 @@ This is my first plugin! Thank you! :)
 
 == Screenshots ==
 
-1. /assets/screenshot-1.png
-2. /assets/screenshot-2.png
-3. /assets/screenshot-3.png
-4. /assets/screenshot-4.png
+1. screenshot-1.png
+2. screenshot-2.png
+3. screenshot-3.png
+4. screenshot-4.png
 
 == Changelog ==
 
@@ -47,9 +47,6 @@ This is my first plugin! Thank you! :)
 <style>
 #yay {
 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-'; echo "
-
-
 background: rgb(255,255,255); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(243,243,243,1) 50%, rgba(237,237,237,1) 51%, rgba(255,255,255,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(243,243,243,1)), color-stop(51%,rgba(237,237,237,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
