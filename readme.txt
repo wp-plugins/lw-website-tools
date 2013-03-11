@@ -43,19 +43,39 @@ This is my first plugin! Thank you! :)
 
 1.1
 
-** (Tools)
-	-Added Text Shadow Generator! :)
-* (Admin Bar)
-	-Changed admin bar text from "Website Tools" To LW Website Tools
-* (Tools Page)
-	-Major improvement with colors and fonts.
-	-Added scrollbars instead of input fields!
-* (Help Page)
-	-Major improvement with colors and fonts.
-* (Css Transform)
-	-Added help dialog to the scale field, incase the user scales the div too far out
-* (Border-Radius Generator
-	-Fixed Alignment
+
+<style>
+#yay {
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+'; echo "
+
+
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(243,243,243,1) 50%, rgba(237,237,237,1) 51%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(243,243,243,1)), color-stop(51%,rgba(237,237,237,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+</style>
+
+<div id="yay">
+** (Tools)<br>
+	-Added Text Shadow Generator! :)<br>
+* (Admin Bar)<br>
+	-Changed admin bar text from "Website Tools" To LW Website Tools<br>
+* (Tools Page)<br>
+	-Major improvement with colors and fonts.<br>
+	-Added scrollbars instead of input fields!<br>
+* (Help Page)<br>
+	-Major improvement with colors and fonts.<br>
+* (Css Transform)<br>
+	-Added help dialog to the scale field, incase the user scales the div too far out<br>
+* (Border-Radius Generator)<br>
+	-Fixed Alignment<br>
+</div>
 
 
 == Upgrade notice ==
