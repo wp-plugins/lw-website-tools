@@ -62,6 +62,6 @@ This is my first plugin! Thank you! :)
 
 
 
-== Arbitrary section 1 ==
+== Notes ==
 
 
