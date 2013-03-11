@@ -58,7 +58,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 </style>
 
-<div id="yay">
+<div class="" id="yay">
 ** (Tools)<br>
 	-Added Text Shadow Generator! :)<br>
 * (Admin Bar)<br>
