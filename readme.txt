@@ -32,7 +32,7 @@ This is my first plugin! Thank you! :)
 
 == Screenshots ==
 
-1. http://www.therecipeminute.com/screenshot-1.png
+1. screenshot-1.png
 2. screenshot-2.png
 3. screenshot-3.png
 4. screenshot-4.png
