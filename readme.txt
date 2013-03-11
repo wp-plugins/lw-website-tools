@@ -34,10 +34,10 @@ This is my first plugin! Thank you! :)
 
 == Screenshots ==
 
-1. /assets/screenshot-1.png
-2. /assets/screenshot-2.png
-3. /assets/screenshot-3.png
-4. /assets/screenshot-4.png
+1. screenshot-1.png
+2. screenshot-2.png
+3. screenshot-3.png
+4. screenshot-4.png
 
 == Changelog ==
 
