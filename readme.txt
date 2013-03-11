@@ -8,15 +8,16 @@ Stable tag:
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Provides the user with three helpful WordPress and css tools.
+Provides the user with helpful css tools!
 
 == Description ==
 
-Provides the user with three helpful WordPress and css tools.
+Provides the user with helpful css tools. Put in your data, copy the css, and  your ready to go!
 
--Box Shadow Generator
--Css Transform Generator
--and a Border Radius Generator
+-Box Shadow Generator<br>
+-Css Transform Generator<br>
+-Border Radius Generator<br>
+-Text-Shadow Generator
 
 This is my first plugin! Thank you! :) 
 
@@ -33,10 +34,28 @@ This is my first plugin! Thank you! :)
 
 == Screenshots ==
 
-1. /images/screenshot-1.png
+1. screenshot-1.png
+2. screenshot-2.png
+3. screenshot-3.png
+4. screenshot-4.png
 
 == Changelog ==
 
+1.1
+
+** (Tools)
+	-Added Text Shadow Generator! :)
+* (Admin Bar)
+	-Changed admin bar text from "Website Tools" To LW Website Tools
+* (Tools Page)
+	-Major improvement with colors and fonts.
+	-Added scrollbars instead of input fields!
+* (Help Page)
+	-Major improvement with colors and fonts.
+* (Css Transform)
+	-Added help dialog to the scale field, incase the user scales the div too far out
+* (Border-Radius Generator
+	-Fixed Alignment
 
 
 == Upgrade notice ==
