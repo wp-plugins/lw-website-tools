@@ -110,6 +110,12 @@ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
 font-weight:100;
 }
 
+#plugin-title {
+  background-image: url(http://www.therecipeminute.com/header.png);
+}
+
+
+
 #main-body
 
 {
