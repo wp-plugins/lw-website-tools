@@ -111,7 +111,7 @@ font-weight:100;
 }
 
 #plugin-title {
-  background-image: url(http://www.therecipeminute.com/header.png);
+  background-image: url(http://www.therecipeminute.com/header.jpg);
 }
 
 
