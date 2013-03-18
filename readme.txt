@@ -29,8 +29,6 @@ This is my first plugin! Thank you! :)
 
 == Frequently asked questions ==
 
-None Yet
-
 == Screenshots ==
 
 1. screenshot-1.png
