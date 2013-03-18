@@ -29,6 +29,7 @@ This is my first plugin! Thank you! :)
 
 == Frequently asked questions ==
 
+None Yet
 
 == Screenshots ==
 
@@ -38,7 +39,6 @@ This is my first plugin! Thank you! :)
 
 1.1
 
-<div style="background-color:lightgrey;" id="yay">
 ** (Tools)<br>
 	-Added Text Shadow Generator! :)<br>
 * (Admin Bar)<br>
@@ -52,7 +52,6 @@ This is my first plugin! Thank you! :)
 	-Added help dialog to the scale field, incase the user scales the div too far out<br>
 * (Border-Radius Generator)<br>
 	-Fixed Alignment<br>
-</div>
 
 
 == Upgrade notice ==
