@@ -43,6 +43,8 @@ This is my first plugin! Thank you! :)
 3. /assets/screenshot-3.png
 4. /assets/screenshot-4.png
 5. /assets/screenshot-5.png
+<br>
+The Widget! :D
 
 == Changelog ==
 
