@@ -3,7 +3,7 @@
 Plugin Name: LW Website Tools
 Plugin URI: 
 Description: Provides users with three useful Wordpress and css tools.
-Version: 1.1
+Version: 1.2
 Author: Logan Grant Wheeler
 Author URI: 
 License: lw_tools
