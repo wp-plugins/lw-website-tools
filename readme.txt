@@ -18,7 +18,7 @@ Provides the user with helpful css tools. Put in your data, copy the css, and  y
 -Css Transform Generator<br>
 -Border Radius Generator<br>
 -Text-Shadow Generator<br>
--Gradient Generator
+-Gradient Generator!
 
 This is my first plugin! Thank you! :) 
 
@@ -33,7 +33,7 @@ This is my first plugin! Thank you! :)
 
 == Screenshots ==
 
-1. screenshot-1.png
+1. http://www.therecipeminute.com/screenshot-1.png
 2. screenshot-2.png
 3. screenshot-3.png
 4. screenshot-4.png
@@ -60,18 +60,20 @@ This is my first plugin! Thank you! :)
 
 ** (Text Shadow Generator)<br>
 	-Added color picker in the shadow-color field<br>
-
-
-1.3
-
 ** (Tools Page)<br>
 	-New tool! Css Gradient Generator!<br>
-
-
+*(Tools Page)
+	-For all tools you don't have to submit every time! :D It automatically shows your changes in real time! :D
 
 
 == Upgrade notice ==
 
+** (Text Shadow Generator)<br>
+	-Added color picker in the shadow-color field<br>
+** (Tools Page)<br>
+	-New tool! Css Gradient Generator!<br>
+*(Tools Page)
+	-For all tools you don't have to submit every time! :D It automatically shows your changes in real time! :D
 
 
 == Notes ==
