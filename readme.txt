@@ -17,7 +17,8 @@ Provides the user with helpful css tools. Put in your data, copy the css, and  y
 -Box Shadow Generator<br>
 -Css Transform Generator<br>
 -Border Radius Generator<br>
--Text-Shadow Generator
+-Text-Shadow Generator<br>
+-Gradient Generator
 
 This is my first plugin! Thank you! :) 
 
@@ -29,9 +30,13 @@ This is my first plugin! Thank you! :)
 
 == Frequently asked questions ==
 
+
 == Screenshots ==
 
 1. screenshot-1.png
+2. screenshot-2.png
+3. screenshot-3.png
+4. screenshot-4.png
 
 == Changelog ==
 
@@ -50,6 +55,19 @@ This is my first plugin! Thank you! :)
 	-Added help dialog to the scale field, incase the user scales the div too far out<br>
 * (Border-Radius Generator)<br>
 	-Fixed Alignment<br>
+
+1.2
+
+** (Text Shadow Generator)<br>
+	-Added color picker in the shadow-color field<br>
+
+
+1.3
+
+** (Tools Page)<br>
+	-New tool! Css Gradient Generator!<br>
+
+
 
 
 == Upgrade notice ==

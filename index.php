@@ -83,6 +83,7 @@ function work(which) {
     document.getElementById('client2').style.display = 'none';
     document.getElementById('client3').style.display = 'none';
     document.getElementById('client4').style.display = 'none';
+    document.getElementById('client5').style.display = 'none';
     document.getElementById(which).style.display = 'block';
     }
 	
@@ -97,6 +98,8 @@ echo '<center><form name="client">
        <option value="client2">Box Shadow</option>
        <option value="client3">Css Transform</option>
        <option value="client4">Text Shadow</option>
+       <option value="client5">Css Gradient</option>
+       <option value="client6">test</option>
      </select> 
 </form></center>';
 
@@ -181,6 +184,24 @@ font-size:50px;
 }
 
 
+#temple8 {
+
+background: rgb(210,255,82); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(210,255,82,1)), color-stop(100%,rgba(145,232,66,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=0 ); /* IE6-9 */
+height:500px;
+width:500px;
+font-size:50px;
+
+}
+
+
+
 #temple4 {
 
 background: rgb(210,255,82); /* Old browsers */
@@ -196,6 +217,68 @@ width:500px;
 font-size:50px;
 
 }
+
+#temple7 {
+
+/*style*/
+/* Mozilla Firefox */
+background-image: -moz-linear-gradient(top, #FFFFFF 0%, #91E842 100%);
+/* IE 10 Consumer Preview */
+background-image: -ms-linear-gradient(top, #FFFFFF 0%, #91E842 100%);
+/* Opera */
+background-image: -o-linear-gradient(top, #FFFFFF 0%, #91E842 100%);
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #91E842)); 
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #91E842 100%);
+/* W3C Markup, IE10 Release Preview */
+background-image: linear-gradient(to bottom, #FFFFFF 0%, #91E842 100%);
+height:500px;
+width:500px;
+font-size:50px;
+
+}
+
+
+
+#temple9 {
+
+background-image: -moz-linear-gradient(top right, #FFFFFF 0%, #61A0E8 100%);/* IE 10 Consumer Preview */
+background-image: -ms-linear-gradient(top right, #FFFFFF 0%, #61A0E8 100%);
+/* Opera */
+background-image: -o-linear-gradient(top right, #FFFFFF 0%, #61A0E8 100%);
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #61A0E8)); 
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(top right, #FFFFFF 0%, #61A0E8 100%);
+/* W3C Markup, IE10 Release Preview */
+background-image: linear-gradient(to bottom left, #FFFFFF 0%, #61A0E8 100%);
+height:500px;
+width:500px;
+font-size:50px;
+
+}
+
+
+#temple10 {
+
+/*style*/
+background-image: -moz-linear-gradient(top left, #FFFFFF 0%, #E86DA2 100%);/* IE 10 Consumer Preview */
+background-image: -ms-linear-gradient(top left, #FFFFFF 0%, #E86DA2 100%);
+/* Opera */
+background-image: -o-linear-gradient(top left, #FFFFFF 0%, #E86DA2 100%);
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #E86DA2)); 
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(top left, #FFFFFF 0%, #E86DA2 100%);
+/* W3C Markup, IE10 Release Preview */
+background-image: linear-gradient(to bottom right, #FFFFFF 0%, #E86DA2 100%);
+height:500px;
+width:500px;
+font-size:50px;
+
+}
+
 ";echo '
 
 
@@ -255,7 +338,9 @@ font-weight:100;
 }
 
 
-
+#plugin-title {
+  background-image: url(http://www.therecipeminute.com/header.png);
+}
 
 
 #yay1:focus
@@ -389,10 +474,115 @@ font-weight:200;
 	color: #8d3393;
 	}
 
+
+#the_first_color_number {
+	background-color: #ffffff;
+	}
+
+#the_second_color_number {
+	background-color: #91e842;
+	}
+
+
+
+
+
+#the_first_color_number2 {
+	background-color: #ffffff;
+	}
+
+#the_second_color_number2 {
+	background-color: #61A0E8;
+	}
+
+
+
+#the_first_color_number3 {
+	background-color: #ffffff;
+	}
+
+#the_second_color_number3 {
+	background-color: #E86DA2;
+	}
+
+
+
+
+
 .flap {
 	font-size:35px;
 	}
 
+
+.to-top
+{
+display:inline-block;
+height:50px;
+width:50px;
+
+/*style*/
+/* Mozilla Firefox */
+background-image: -moz-linear-gradient(top, #FFFFFF 30%, #91E842 100%);
+/* IE 10 Consumer Preview */
+background-image: -ms-linear-gradient(top, #FFFFFF 30%, #91E842 100%);
+/* Opera */
+background-image: -o-linear-gradient(top, #FFFFFF 30%, #91E842 100%);
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #91E842)); 
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(top, #FFFFFF 30%, #91E842 100%);
+/* W3C Markup, IE10 Release Preview */
+background-image: linear-gradient(to bottom, #FFFFFF 30%, #91E842 100%);
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+}
+
+.top-right
+{
+
+display:inline-block;
+height:50px;
+width:50px;
+
+/*style*/
+background-image: -moz-linear-gradient(top right, #FFFFFF 30%, #61A0E8 100%);/* IE 10 Consumer Preview */
+background-image: -ms-linear-gradient(top right, #FFFFFF 30%, #61A0E8 100%);
+/* Opera */
+background-image: -o-linear-gradient(top right, #FFFFFF 30%, #61A0E8 100%);
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #61A0E8)); 
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(top right, #FFFFFF 30%, #61A0E8 100%);
+/* W3C Markup, IE10 Release Preview */
+background-image: linear-gradient(to bottom left, #FFFFFF 30%, #61A0E8 100%);
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+}
+
+
+.top-left
+{
+
+display:inline-block;
+height:50px;
+width:50px;
+
+/*style*/
+background-image: -moz-linear-gradient(top left, #FFFFFF 30%, #E86DA2 100%);/* IE 10 Consumer Preview */
+background-image: -ms-linear-gradient(top left, #FFFFFF 30%, #E86DA2 100%);
+/* Opera */
+background-image: -o-linear-gradient(top left, #FFFFFF 30%, #E86DA2 100%);
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #E86DA2)); 
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(top left, #FFFFFF 30%, #E86DA2 100%);
+/* W3C Markup, IE10 Release Preview */
+background-image: linear-gradient(to bottom right, #FFFFFF 30%, #E86DA2 100%);
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+
+
+}
 
 
 </style>
@@ -405,13 +595,14 @@ echo "	    function test2(){
 			var tl = document.getElementById('top_left').value;
 			var tr = document.getElementById('top_right').value;
 			var bl = document.getElementById('bottom_left').value;
-			var br = document.getElementById('bottom_right').value;";
+			var br = document.getElementById('bottom_right').value;
+";
 
 
 			echo "document.getElementById('out2').innerHTML =";
 
 
-echo ' "<style>#temple3" + "{" + "border-top-left-radius:" + tl + "px;border-top-right-radius:" + tr + "px;border-bottom-right-radius:" + br + "px;border-bottom-left-radius:" + bl + "px;-moz-border-top-left-radius:" + tl + "px;-moz-border-top-right-radius:" + tr + "px;-moz-border-bottom-right-radius:" + br + "px;-moz-border-bottom-left-radius:" + bl + "px;-webkit-border-top-left-radius:" + tl + "px;-webkit-border-top-right-radius:" + tr + "px;-webkit-border-bottom-right-radius:" + br + "px;-webkit-border-bottom-left-radius:" + bl + "px;" + "}" + "</style>" + "<div id=';echo "'temple3'>";echo '<br><br><br><br><br><br><br><br><br><br><br><br>Your Text! :D</div><br>" + "';
+echo ' "<style>#temple3" + "{" + "border-top-left-radius:" + tl + "px;border-top-right-radius:" + tr + "px;border-bottom-right-radius:" + br + "px;border-bottom-left-radius:" + bl + "px;-moz-border-top-left-radius:" + tl + "px;-moz-border-top-right-radius:" + tr + "px;-moz-border-bottom-right-radius:" + br + "px;-moz-border-bottom-left-radius:" + bl + "px;-webkit-border-top-left-radius:" + tl + "px;-webkit-border-top-right-radius:" + tr + "px;-webkit-border-bottom-right-radius:" + br + "px;-webkit-border-bottom-left-radius:" + bl + "px;" + "}" + "</style>" + "<div id=';echo "''>";echo '</div>" + "';
 
 echo "<textarea style='height:100px;width:500px;'";
 
@@ -423,6 +614,9 @@ echo "
 echo '			return false;
 		}
 	</script>
+
+	<script type="text/javascript" src="/wp-content/plugins/lw-website-tools/js/jscolor.js"></script>
+
 </head>
 
 <body>
@@ -439,8 +633,8 @@ echo '			return false;
 		<div class="horizontal_slit" id="horizontal_slit_1" >&nbsp;</div>
 		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
 			default position: 80 pixels, connected to value_display_1 -->
-		<div onchange="return test5()" class="horizontal_slider" id="horizontal_slider_1" style="left: 82.5px;"
-			onmousedown="'; echo "slide(event, 'horizontal', 165, 0, 100, 21, 0, 'top_left'"; echo ');" >&nbsp;</div>
+		<div class="horizontal_slider" id="horizontal_slider_1" style="left: 82.5px;"
+			onmousedown="'; echo "slide(event, 'horizontal', 165, 0, 100, 101, 0, 'top_left'"; echo ');myFunction();" >&nbsp;</div>
 
 
 	</div>
@@ -455,11 +649,12 @@ echo '			return false;
 		<div class="horizontal_slit" id="horizontal_slit_2" >&nbsp;</div>
 		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
 			default position: 35 pixels, connected to value_display_2 -->
-		<div class="horizontal_slider" id="horizontal_slider_2" style="left: 50px;"
-			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 21, 0, 'top_right'"; echo ');">
+		<div class="horizontal_slider" id="horizontal_slider_2" style="left: 82.5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 101, 0, 'top_right'"; echo ');">
 			&nbsp;
 		</div>
 	</div>
+
 
 
 <div class="flap">Bottom Left</div>	<!-- Value display 3 (red)	-->
@@ -472,8 +667,8 @@ echo '			return false;
 		<div class="horizontal_slit" id="horizontal_slit_3" >&nbsp;</div>
 		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
 			Default position: 40 pixels, Connected to value_display_3 -->
-		<div class="horizontal_slider" id="horizontal_slider_3" style="left: 50px;"
-			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 21, 0, 'bottom_left'";echo ');">&nbsp;</div>
+		<div class="horizontal_slider" id="horizontal_slider_3" style="left: 82.5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 101, 0, 'bottom_left'";echo ');">&nbsp;</div>
 	</div>
 
 <div class="flap">Bottom Right</div>	<!-- Value display 5 (red)	-->
@@ -486,17 +681,16 @@ echo '			return false;
 		<div class="horizontal_slit" id="horizontal_slit_5" >&nbsp;</div>
 		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
 			Default position: 40 pixels, Connected to value_display_3 -->
-		<div class="horizontal_slider" id="horizontal_slider_5" style="left: 50px;"
-			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 21, 0, 'bottom_right'";echo ');">&nbsp;</div>
+		<div class="horizontal_slider" id="horizontal_slider_5" style="left: 82.5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 101, 0, 'bottom_right'";echo ');">&nbsp;</div>
 	</div>
-
-        <p><input style="background-color:white;width:200px;border: 5px solid #ccc" type="submit" value="Go! :)" /></p>
-
-
 
          </form>
 
+<div id="temple3" style="float:right;"><br><br><br><br><br><br><br><br><br><br><br><br>Your Text! :D<br></div>
     <div id="out2" style="float:right;">
+
+
     </div>
 </body>
 </div>
@@ -522,7 +716,7 @@ echo "	    function test(){
 			echo "document.getElementById('out').innerHTML =";
 
 
-echo ' "<style>#temple1" + "{" + "height:500px;width:500px;font-size:40pt;box-shadow:" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "-webkit-box-shadow:" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + + sp + "px;" + "-moz-box-shadow" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "}</style>" + "<div id=';echo "'temple1'>";echo '<br><br><br><br><br><br><br><br><br><br>Your Text! :D</div><br>" + "';
+echo ' "<style>#temple1" + "{" + "height:500px;width:500px;font-size:40pt;box-shadow:" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "-webkit-box-shadow:" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + + sp + "px;" + "-moz-box-shadow" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "}</style>" + "<div id=';echo "''>";echo '</div>" + "';
 
 echo "<textarea style='height:100px;width:500px;'";
 
@@ -549,7 +743,7 @@ echo '			return false;
 		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
 			default position: 80 pixels, connected to value_display_1 -->
 		<div onchange="return test5()" class="horizontal_slider" id="horizontal_slider_11" style="left: 5px;"
-			onmousedown="'; echo "slide(event, 'horizontal', 165, 0, 100, 21, 0, 'horizontal_length'"; echo ');" >&nbsp;</div>
+			onmousedown="'; echo "slide(event, 'horizontal', 165, 0, 100, 101, 0, 'horizontal_length'"; echo ');" >&nbsp;</div>
 
 
 	</div>
@@ -565,7 +759,7 @@ echo '			return false;
 		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
 			default position: 35 pixels, connected to value_display_2 -->
 		<div class="horizontal_slider" id="horizontal_slider_21" style="left: 5px;"
-			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 21, 0, 'vertical_length'"; echo ');">
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 101, 0, 'vertical_length'"; echo ');">
 			&nbsp;
 		</div>
 	</div>
@@ -582,7 +776,7 @@ echo '			return false;
 		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
 			Default position: 40 pixels, Connected to value_display_3 -->
 		<div class="horizontal_slider" id="horizontal_slider_31" style="left: 5px;"
-			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 21, 0, 'blur_radius'";echo ');">&nbsp;</div>
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 101, 0, 'blur_radius'";echo ');">&nbsp;</div>
 	</div>
 
 <div class="flap">Spread</div>	<!-- Value display 5 (red)	-->
@@ -596,12 +790,12 @@ echo '			return false;
 		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
 			Default position: 40 pixels, Connected to value_display_3 -->
 		<div class="horizontal_slider" id="horizontal_slider_51" style="left: 5px;"
-			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 21, 0, 'spread'";echo ');">&nbsp;</div>
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 101, 0, 'spread'";echo ');">&nbsp;</div>
 	</div>
-
-        <p><input style="background-color:white;width:200px;border: 5px solid #ccc" type="submit" value="Go! :)" /></p>
     </form>
 
+
+<div id="temple1" style="float:right;"><br><br><br><br><br><br><br><br><br><br><br><br>Your Text! :D<br></div>
     <div id="out" style="float:right;" >
     </div>
 </body>
@@ -680,7 +874,7 @@ alert("Scales the box according to the number. Use 1.0 - 2.0 to be safe :)");
 
 
 		<div onchange="return test5()" class="horizontal_slider" id="horizontal_slider_13" style="left: 82.5px;"
-			onmousedown="'; echo "slide(event, 'horizontal', 165, 0, 2, 21, 1, 'scale'"; echo ');" >&nbsp;</div>
+			onmousedown="'; echo "slide(event, 'horizontal', 165, 0, 2, 101, 1, 'scale'"; echo ');" >&nbsp;</div>
 	</div>
 
 
@@ -696,7 +890,7 @@ alert("Scales the box according to the number. Use 1.0 - 2.0 to be safe :)");
 		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
 			default position: 35 pixels, connected to value_display_2 -->
 		<div class="horizontal_slider" id="horizontal_slider_23" style="left: 5px;"
-			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 21, 0, 'rotate'"; echo ');">
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 360, 361, 0, 'rotate'"; echo ');">
 			&nbsp;
 		</div>
 	</div>
@@ -713,7 +907,7 @@ alert("Scales the box according to the number. Use 1.0 - 2.0 to be safe :)");
 		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
 			Default position: 40 pixels, Connected to value_display_3 -->
 		<div class="horizontal_slider" id="horizontal_slider_33" style="left: 5px;"
-			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 21, 0, 'translate_x'";echo ');">&nbsp;</div>
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 101, 0, 'translate_x'";echo ');">&nbsp;</div>
 	</div>
 
 <div class="flap">Translate Y</div>	<!-- Value display 5 (red)	-->
@@ -727,7 +921,7 @@ alert("Scales the box according to the number. Use 1.0 - 2.0 to be safe :)");
 		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
 			Default position: 40 pixels, Connected to value_display_3 -->
 		<div class="horizontal_slider" id="horizontal_slider_53" style="left: 5px;"
-			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 21, 0, 'translate_y'";echo ');">&nbsp;</div>
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 101, 0, 'translate_y'";echo ');">&nbsp;</div>
 	</div>
 
 <div class="flap">Skew X</div>	<!-- Value display 5 (red)	-->
@@ -741,7 +935,7 @@ alert("Scales the box according to the number. Use 1.0 - 2.0 to be safe :)");
 		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
 			Default position: 40 pixels, Connected to value_display_3 -->
 		<div class="horizontal_slider" id="horizontal_slider_63" style="left: 5px;"
-			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 21, 0, 'skew_x'";echo ');">&nbsp;</div>
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 101, 0, 'skew_x'";echo ');">&nbsp;</div>
 	</div>
 
 <div class="flap">Skew Y</div>	<!-- Value display 5 (red)	-->
@@ -755,7 +949,7 @@ alert("Scales the box according to the number. Use 1.0 - 2.0 to be safe :)");
 		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
 			Default position: 40 pixels, Connected to value_display_3 -->
 		<div class="horizontal_slider" id="horizontal_slider_73" style="left: 5px;"
-			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 21, 0, 'skew_y'";echo ');">&nbsp;</div>
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 101, 0, 'skew_y'";echo ');">&nbsp;</div>
 	</div>
 
 
@@ -880,6 +1074,23 @@ echo '
 
 
 
+
+#horizontal_slider_7 {
+	background-color: #ffffff;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_7, #display_holder_7 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_7 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_7 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
 
 
 
@@ -1087,6 +1298,160 @@ echo '
 	color: #8d3393;
 	}
 
+
+#horizontal_slider_71 {
+	background-color: #91E842;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_71, #display_holder_71 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_71 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_71 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+#horizontal_slider_8 {
+	background-color: #91E842;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_8, #display_holder_8 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_8 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_8 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+
+#horizontal_slider_81 {
+	background-color: #91E842;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_81, #display_holder_81 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_81 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_81 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+
+
+#horizontal_slider_9 {
+	background-color: #ffffff;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_9, #display_holder_9 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_9 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_9 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+
+
+
+#horizontal_slider_91 {
+	background-color: 61A0E8#;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_91, #display_holder_91 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_91 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_91 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+#horizontal_slider_10 {
+	background-color: #ffffff;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_10, #display_holder_10 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_10 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_10 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+
+
+
+#horizontal_slider_101 {
+	background-color: #E86DA2;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_101, #display_holder_101 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_101 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_101 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+
+
+
+
 #horizontal_slider_13 {
 	background-color: #696;
 	border-color: #9c9 #363 #363 #9c9;
@@ -1209,12 +1574,12 @@ echo "	    function test5(){
 			echo "document.getElementById('out5').innerHTML =";
 
 
-echo ' "<style>#temple2" + "{" + "" + "text-shadow: " + hl + "px " + vl + "px " + bl + "px " + sc + ";" + "filter: dropshadow(color=" + sc + ", offx=" + hl + ", offy=" + vl + ");" + "}" + "</style>" + "<div id=';echo "'temple2'>";echo '<br><br><br><br><br><br><br><br><br><br><br><br>Your Text! :D</div><br>" + "';
+echo ' "<style>#temple2" + "{" + "" + "text-shadow: " + hl + "px " + vl + "px " + bl + "px #" + sc + ";" + "filter: dropshadow(color=#" + sc + ", offx=" + hl + ", offy=" + vl + ");" + "}" + "</style>" + "<div id=';echo "'temple2'>";echo '<br><br><br><br><br><br><br><br><br><br><br><br>Your Text! :D</div><br>" + "';
 
 
 echo "<textarea style='height:150px;width:500px;border:solid 2px #ccc;'";
 
-echo '>" + "/*style*/" + "&#013;" + "&#013;" + "text-shadow: " + hl + "px " + vl + "px " + bl + "px " + sc + ";" + "&#013;" + "filter: dropshadow(color=" + sc + ", offx=" + hl + ", offy=" + vl + ");" + "</textarea>" + "<div id=';
+echo '>" + "/*style*/" + "&#013;" + "&#013;" + "text-shadow: " + hl + "px " + vl + "px #" + bl + "px " + sc + ";" + "&#013;" + "filter: dropshadow(color=#" + sc + ", offx=" + hl + ", offy=" + vl + ");" + "</textarea>" + "<div id=';
 echo "''>"; echo '</div>";';
 echo "
 			document.getElementById('out5').style.display ="; echo ' "block";';
@@ -1255,8 +1620,8 @@ echo '<body>
 		<div class="horizontal_slit" id="horizontal_slit_12" >&nbsp;</div>
 		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
 			default position: 80 pixels, connected to value_display_1 -->
-		<div onchange="return test5()" class="horizontal_slider" id="horizontal_slider_12" style="left: 5px;"
-			onmousedown="'; echo "slide(event, 'horizontal', 165, 0, 100, 101, 0, 'x'"; echo ');" >&nbsp;</div>
+		<div onchange="return test5()"  class="horizontal_slider" id="horizontal_slider_12" style="left: 5px;"
+			onmousedown="'; echo "slide(event, 'horizontal', 165, 0, 100, 101, 0, 'x'"; echo ');test5();" >&nbsp;</div>
 
 
 	</div>
@@ -1273,7 +1638,7 @@ echo '<body>
 		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
 			default position: 35 pixels, connected to value_display_2 -->
 		<div class="horizontal_slider" id="horizontal_slider_22" style="left: 5px;"
-			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 21, 0, 'y'"; echo ');">
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 100, 101, 0, 'y'"; echo ');">
 			&nbsp;
 		</div>
 	</div>
@@ -1298,29 +1663,484 @@ echo '<body>
 <table>
 <tr>
 <td><br><br>
-<lgw style="cursor:help;" onclick="show_alert1()" ><img src="/wp-content/plugins/LW-Website-Tools/images/question.png"></lgw>
 </td>
 <td>
 <div class="flap">Shadow-Color</div>
 <br>
-        <input style="font-size: 15pt;height:45px;background-color:white;width:200px;border: 2px solid #ccc" id="shadow_color" type="text" name="" /></td>
+        <input onchange="return test5();" class="color" value="000000" style="font-size: 15pt;height:45px;background-color:white;width:200px;border: 2px solid #ccc" id="shadow_color" type="text" name="" /></td>
 </td>
 </table>
   <p>
-            <input style="background-color:white;width:200px;border: 5px solid #ccc" type="submit" value="Go! :)" />
+
         </p>
- 
+
+';
+
+echo '
+
     </form>
     <div id="out5"style="float:right;"></div>
 </body>
 </div>
+<div id="client5" style="display:none;">
+
+ <script language="javascript">
+        function MyFunction(divName){
+
+        //hidden val
+        var hiddenVal = document.getElementById("tempDivName"); 
+
+        //hide old
+        if(hiddenVal.Value != undefined){
+            var oldDiv = document.getElementById(hiddenVal.Value); 
+            oldDiv.style.display = ';echo "'none'; 
+        }
+
+        //show div
+            var tempDiv = document.getElementById(divName); 
+            tempDiv.style.display = 'block'";echo ';              
+
+        //save div ID
+            hiddenVal.Value = document.getElementById(divName).getAttribute("id");
+
+        }
+    </script>
+    <input id="tempDivName" type="hidden" />
+ <a href="#" OnClick="MyFunction(';echo "'myDiv1'";echo ');"><div class="to-top"></div></a>
+<a href="#" OnClick="MyFunction(';echo "'myDiv2'";echo ');"><div class="top-right"></div></a>
+<a href="#" OnClick="MyFunction(';echo "'myDiv3'";echo ');"><div class="top-left"></div></a>
+
+
+    <br/>
+    <div id="myDiv1" style="display:none">
+     <script type="text/javascript">';
+echo "	    function test7(){
+
+			var fc = document.getElementById('the_first_color').value;
+			var sn = document.getElementById('the_second_color').value;
+			var fcn = document.getElementById('the_first_color_number').value;
+			var snn = document.getElementById('the_second_color_number').value;";
+
+
+			echo "document.getElementById('out7').innerHTML =";
+
+
+echo ' "<style>#temple7" + "{" + "background-image: -moz-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" +  "}" + "#horizontal_slider_71 { background-color: #" + sn + ";}" + "#horizontal_slider_7 { background-color: #" + fc + ";}" + "#the_first_color_number { background-color: #" + fc + ";}" + "#the_second_color_number { background-color: #" + sn + ";}" + "/* IE 10 Consumer Preview */" + "background-image: -ms-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "/* Opera */" + "background-image: -o-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "/* Webkit (Safari/Chrome 10) */" + "background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #" + fc + "), color-stop(1, #" + sn + ")); " + "/* Webkit (Chrome 11+) */" + + "background-image: -webkit-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "/* W3C Markup, IE10 Release Preview */" + + "background-image: linear-gradient(to bottom, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "</style>" + "<div id=';echo "''>";echo '</div>" + "';
+
+echo "<textarea style='height:100px;width:500px;'";echo '>" + "/*style*/" + "&#013;" + "/* Mozilla Firefox */" + "&#013;" + "background-image: -moz-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "&#013;" + "/* IE 10 Consumer Preview */" + "&#013;" + "background-image: -ms-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "&#013;" + "/* Opera */" + "&#013;" + "background-image: -o-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "&#013;" + "/* Webkit (Safari/Chrome 10) */" + "&#013;" + "background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #" + fc + "), color-stop(1, #" + sn + ")); " + "&#013;" + "/* Webkit (Chrome 11+) */" + "&#013;" + "background-image: -webkit-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" +  "&#013;" + "/* W3C Markup, IE10 Release Preview */" + "&#013;" + "background-image: linear-gradient(to bottom, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "</textarea>" + "<div id=';echo "''>"; echo '</div>";';
+echo "
+			document.getElementById('out7').style.display ="; echo ' "block";';
+
+echo '			return false;
+		}
+	</script>
 
 
 
+
+
+
+</head>
+
+<body>
+    <form style="float:left;height:100%;width:350px;" action="" onsubmit="return test7()">
+
+
+
+
+<div>
+
+
+<div class="flap">Top</div>	<!-- Value display 1 (green) -->
+	<div class="display_holder" id="display_holder_7" >
+		<!-- Default value: 80 -->
+		<input type="text" class="value_display" id="the_first_color_number" value="0" onfocus="blur(this);" />
+	</div>	<!-- Horizontal slider 1 (green) -->
+	<div class="horizontal_track" id="horizontal_track_7" >
+
+
+		<div class="horizontal_slit" id="horizontal_slit_7" >&nbsp;</div>
+		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
+			default position: 80 pixels, connected to value_display_1 -->
+		<div onchange="return test5()"  class="horizontal_slider" id="horizontal_slider_7" style="left: 0px;"
+			onmousedown="'; echo "slide(event, 'horizontal', 165, 0, 100, 101, 0, 'the_first_color_number'"; echo ');" >&nbsp;</div>
+
+
+	</div>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="flap">Color</div>
+<br>
+<input onchange="return test7()" class="color {onImmediateChange:';echo "'updateInfo(this);'";echo '}" value="ffffff" style="font-size: 15pt;height:45px;background-color:white;width:200px;border: 2px solid #ccc" type="text" id="the_first_color" />
+
+
+<div>
+
+
+<div class="flap">Bottom</div>
+
+	<!-- Value display 2 (blue)	-->
+	<div class="display_holder" id="display_holder_71" >
+		<!-- Default value: 35 -->
+
+
+		<input type="text" class="value_display" id="the_second_color_number" value="100" onfocus="blur(this);" />
+	</div>	<!-- Horizontal slider 2 (blue) -->
+	<div class="horizontal_track" id="horizontal_track_71" >
+
+		<div class="horizontal_slit" id="horizontal_slit_71" >&nbsp;</div>
+		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
+			default position: 35 pixels, connected to value_display_2 -->
+		<div class="horizontal_slider" id="horizontal_slider_71" style="left: 33px;"
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 500, 101, 0, 'the_second_color_number'"; echo ');">
+			&nbsp;
+		</div>
+	</div>
+
+</div>
+
+<div class="flap">Color</div>
+<br>
+<input onchange="return test7()" class="color" value="91E842" style="font-size: 15pt;height:45px;background-color:white;width:200px;border: 2px solid #ccc" type="text" id="the_second_color" />
+
+
+
+
+
+         </form>
+<div id="temple7" style="float:right;"><br><br><br><br><br><br><br><br><br><br><br><br>Your Text! :D</div>
+    <div id="out7" style="float:right;">
+    </div>
+</body>
+
+
+    </div>
+    <div id="myDiv2" style="display:none">
+ 
+
+ <script type="text/javascript">';
+echo "	    function test9(){
+
+			var fcc = document.getElementById('the_first_color2').value;
+			var snc = document.getElementById('the_second_color2').value;
+			var fcnc = document.getElementById('the_first_color_number2').value;
+			var snnc = document.getElementById('the_second_color_number2').value;";
+
+
+			echo "document.getElementById('out9').innerHTML =";
+
+
+echo ' "<style>#temple9" + "{" + "background-image: -moz-linear-gradient(top right, #" + fcc + " " + fcnc + "%, #" + snc + " " + snnc + "%);" +"/* IE 10 Consumer Preview */" + "&#013;" + "background-image: -ms-linear-gradient(top right, #" + fcc + " " + fcnc + "%, #" + snc + " " + snnc + "%);" + "/* Opera */" + "background-image: -o-linear-gradient(top right, #" + fcc + " " + fcnc + "%, #" + snc + " " + snnc + "%);" + "/* Webkit (Safari/Chrome 10) */" + "background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, #" + fcc + "), color-stop(1, #" + snc + ")); " + "/* Webkit (Chrome 11+) */" + "background-image: -webkit-linear-gradient(top right, #" + fcc + " " + fcnc + "%, #" + snc + " " + snnc + "%);" + "/* W3C Markup, IE10 Release Preview */" + "background-image: linear-gradient(to bottom left, #" + fcc + " " + fcnc + "%, #" + snc + " " + snnc + "%);" + "}" + "#horizontal_slider_91 { background-color: #" + snc + ";}" + "#horizontal_slider_9 { background-color: #" + fcc + ";}" + "#the_first_color_number2 { background-color: #" + fcc + ";}" + "#the_second_color_number2 { background-color: #" + snc + ";}" + "</style>" + "<div id=';echo "''>";echo '</div>" + "';
+
+echo "<textarea style='height:100px;width:500px;'";echo '>" + "/*style*/" + "&#013;" + "background-image: -moz-linear-gradient(top right, #" + fcc + " " + fcnc + "%, #" + snc + " " + snnc + "%);" + "/* IE 10 Consumer Preview */" + "&#013;" + "background-image: -ms-linear-gradient(top right, #" + fcc + " " + fcnc + "%, #" + snc + " " + snnc + "%);" + "&#013;" + "/* Opera */" + "&#013;" + "background-image: -o-linear-gradient(top right, #" + fcc + " " + fcnc + "%, #" + snc + " " + snnc + "%);" + "&#013;" + "/* Webkit (Safari/Chrome 10) */" + "&#013;" + "background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, #" + fcc + "), color-stop(1, #" + snc + ")); " + "&#013;" + "/* Webkit (Chrome 11+) */" + "&#013;" + "background-image: -webkit-linear-gradient(top right, #" + fcc + " " + fcnc + "%, #" + snc + " " + snnc + "%);" +  "&#013;" + "/* W3C Markup, IE10 Release Preview */" + "&#013;" + "background-image: linear-gradient(to bottom left, #" + fcc + " " + fcnc + "%, #" + snc + " " + snnc + "%);" +  "</textarea>" + "<div id=';echo "''>"; echo '</div>";';
+echo "
+			document.getElementById('out9').style.display ="; echo ' "block";';
+
+echo '			return false;
+		}
+	</script>
+
+
+
+
+
+
+</head>
+
+<body>
+    <form style="float:left;height:100%;width:350px;" action="" onsubmit="return test9()">
+
+<div>
+<div class="flap">Top-Right</div>	<!-- Value display 1 (green) -->
+	<div class="display_holder" id="display_holder_9" >
+		<!-- Default value: 80 -->
+		<input type="text" class="value_display" id="the_first_color_number2" value="0" onfocus="blur(this);" />
+	</div>	<!-- Horizontal slider 1 (green) -->
+	<div class="horizontal_track" id="horizontal_track_9" >
+
+
+		<div class="horizontal_slit" id="horizontal_slit_9" >&nbsp;</div>
+		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
+			default position: 80 pixels, connected to value_display_1 -->
+		<div onchange="return test5()"  class="horizontal_slider" id="horizontal_slider_9" style="left: 0px;"
+			onmousedown="'; echo "slide(event, 'horizontal', 165, 0, 100, 101, 0, 'the_first_color_number2'"; echo ');" >&nbsp;</div>
+
+
+	</div>
+
+
+</div>
+
+
+
+<div>
+
+<div class="flap">Color</div>
+<br>
+<input onchange="return test9()" class="color {onImmediateChange:';echo "'updateInfo(this);'";echo '}" value="ffffff" style="font-size: 15pt;height:45px;background-color:white;width:200px;border: 2px solid #ccc" type="text" id="the_first_color2" />
+
+<div class="flap">Bottom-Left</div>
+
+	<!-- Value display 2 (blue)	-->
+	<div class="display_holder" id="display_holder_91" >
+		<!-- Default value: 35 -->
+
+
+		<input type="text" class="value_display" id="the_second_color_number2" value="100" onfocus="blur(this);" />
+	</div>	<!-- Horizontal slider 2 (blue) -->
+	<div class="horizontal_track" id="horizontal_track_91" >
+		<div class="horizontal_slit" id="horizontal_slit_91" >&nbsp;</div>
+		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
+			default position: 35 pixels, connected to value_display_2 -->
+		<div class="horizontal_slider" id="horizontal_slider_91" style="left: 33px;"
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 500, 101, 0, 'the_second_color_number2'"; echo ');">
+			&nbsp;
+		</div>
+	</div>
+
+</div>
+
+
+<div class="flap">Color</div>
+<br>
+<input onchange="return test9()" class="color" value="61A0E8" style="font-size: 15pt;height:45px;background-color:white;width:200px;border: 2px solid #ccc" type="text" id="the_second_color2" />
+
+
+
+
+         </form>
+<div id="temple9" style="float:right;"><br><br><br><br><br><br><br><br><br><br><br><br>Your Text! :D</div>
+    <div id="out9" style="float:right;">
+    </div>
+</body>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <div id="myDiv3" style="display:none">
+ 
+
+ <script type="text/javascript">';
+echo "	    function test10(){
+
+			var fccd = document.getElementById('the_first_color3').value;
+			var sncd = document.getElementById('the_second_color3').value;
+			var fcncd = document.getElementById('the_first_color_number3').value;
+			var snncd = document.getElementById('the_second_color_number3').value;";
+
+
+			echo "document.getElementById('out10').innerHTML =";
+
+
+echo ' "<style>#temple10" + "{" + "background-image: -moz-linear-gradient(top left, #" + fccd + " " + fcncd + "%, #" + sncd + " " + snncd + "%);" + "/* IE 10 Consumer Preview */" + "background-image: -ms-linear-gradient(top left, #" + fccd + " " + fcncd + "%, #" + sncd + " " + snncd + "%);" + "/* Opera */" + "background-image: -o-linear-gradient(top left, #" + fccd + " " + fcncd + "%, #" + sncd + " " + snncd + "%);" + "/* Webkit (Safari/Chrome 10) */" + "background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #" + fccd + "), color-stop(1, #" + sncd + ")); " + "/* Webkit (Chrome 11+) */" + "background-image: -webkit-linear-gradient(top left, #" + fccd + " " + fcncd + "%, #" + sncd + " " + snncd + "%);" + "/* W3C Markup, IE10 Release Preview */" + "background-image: linear-gradient(to bottom right, #" + fccd + " " + fcncd + "%, #" + sncd + " " + snncd + "%);" +  "}" + "#horizontal_slider_101 { background-color: #" + sncd + ";}" + "#horizontal_slider_10 { background-color: #" + fccd + ";}" + "#the_first_color_number3 { background-color: #" + fccd + ";}" + "#the_second_color_number3 { background-color: #" + sncd + ";}" + "</style>" + "<div id=';echo "''>";echo '</div>" + "';
+
+echo "<textarea style='height:100px;width:500px;'";echo '>" + "/*style*/" + "&#013;" + "background-image: -moz-linear-gradient(top left, #" + fccd + " " + fcncd + "%, #" + sncd + " " + snncd + "%);" + "/* IE 10 Consumer Preview */" + "&#013;" + "background-image: -ms-linear-gradient(top left, #" + fccd + " " + fcncd + "%, #" + sncd + " " + snncd + "%);" + "&#013;" + "/* Opera */" + "&#013;" + "background-image: -o-linear-gradient(top left, #" + fccd + " " + fcncd + "%, #" + sncd + " " + snncd + "%);" + "&#013;" + "/* Webkit (Safari/Chrome 10) */" + "&#013;" + "background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #" + fccd + "), color-stop(1, #" + sncd + ")); " + "&#013;" + "/* Webkit (Chrome 11+) */" + "&#013;" + "background-image: -webkit-linear-gradient(top left, #" + fccd + " " + fcncd + "%, #" + sncd + " " + snncd + "%);" +  "&#013;" + "/* W3C Markup, IE10 Release Preview */" + "&#013;" + "background-image: linear-gradient(to bottom right, #" + fccd + " " + fcncd + "%, #" + sncd + " " + snncd + "%);" + "</textarea>" + "<div id=';echo "''>"; echo '</div>";';
+echo "
+			document.getElementById('out10').style.display ="; echo ' "block";';
+
+echo '			return false;
+		}
+	</script>
+
+
+
+
+
+
+</head>
+
+<body>
+    <form style="float:left;height:100%;width:350px;" action="" onsubmit="return test10()">
+
+<div>
+<div class="flap">Top-Left</div>	<!-- Value display 1 (green) -->
+	<div class="display_holder" id="display_holder_10" >
+		<!-- Default value: 80 -->
+		<input type="text" class="value_display" id="the_first_color_number3" value="0" onfocus="blur(this);" />
+	</div>	<!-- Horizontal slider 1 (green) -->
+	<div class="horizontal_track" id="horizontal_track_10" >
+
+
+		<div class="horizontal_slit" id="horizontal_slit_10" >&nbsp;</div>
+		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
+			default position: 80 pixels, connected to value_display_1 -->
+		<div onchange="return test10()"  class="horizontal_slider" id="horizontal_slider_10" style="left: 0px;"
+			onmousedown="'; echo "slide(event, 'horizontal', 165, 0, 100, 101, 0, 'the_first_color_number3'"; echo ');" >&nbsp;</div>
+
+
+	</div>
+
+
+
+</div>
+
+<div class="flap">Color</div>
+<br>
+<input onchange="return test10()" class="color {onImmediateChange:';echo "'updateInfo(this);'";echo '}" value="ffffff" style="font-size: 15pt;height:45px;background-color:white;width:200px;border: 2px solid #ccc" type="text" id="the_first_color3" />
+
+<div>
+
+
+
+<div class="flap">Bottom-Right</div>
+	<!-- Value display 2 (blue)	-->
+	<div class="display_holder" id="display_holder_101" >
+		<!-- Default value: 35 -->
+
+
+		<input type="text" class="value_display" id="the_second_color_number3" value="100" onfocus="blur(this);" />
+	</div>	<!-- Horizontal slider 2 (blue) -->
+	<div class="horizontal_track" id="horizontal_track_101" >
+
+		<div class="horizontal_slit" id="horizontal_slit_101" >&nbsp;</div>
+		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
+			default position: 35 pixels, connected to value_display_2 -->
+		<div class="horizontal_slider" id="horizontal_slider_101" style="left: 33px;"
+			onmousedown="slide(event, ';echo "'horizontal', 165, 0, 500, 101, 0, 'the_second_color_number3'"; echo ');">
+			&nbsp;
+		</div>
+	</div>
+
+</div>
+
+<div class="flap">Color</div>
+<br>
+<input onchange="return test10()" class="color" value="E86DA2" style="font-size: 15pt;height:45px;background-color:white;width:200px;border: 2px solid #ccc" type="text" id="the_second_color3" />
+
+
+
+         </form>
+<div id="temple10" style="float:right;"><br><br><br><br><br><br><br><br><br><br><br><br>Your Text! :D</div>
+    <div id="out10" style="float:right;">
+    </div>
+</body>
+
+
+
+
+
+
+    </div>
+
+
+</div>
 
 ';
 
+
+
+
+
+
+
 echo "
+
+
+
+
+
+
+<script>
+
+/* This script and many more are available free online at
+The JavaScript Source!! http://www.javascriptsource.com
+Created by: Dustin Diaz | http://www.dustindiaz.com/ */
+
+var Dom = {
+  get: function(el) {
+    if (typeof el === 'string') {
+      return document.getElementById(el);
+    } else {
+      return el;
+    }
+  },
+  add: function(el, dest) {
+    var el = this.get(el);
+    var dest = this.get(dest);
+    dest.appendChild(el);
+
+  },
+
+  remove: function(el) {
+    var el = this.get(el);
+    el.parentNode.removeChild(el); 
+    var il = this.get(il);
+    il.parentNode.removeChild(il); 
+
+  },
+
+
+};
+
+function delete_row(e)
+{
+    e.parentNode.parentNode.removeChild(e.parentNode);
+}
+
+var Event = {
+  add: function() {
+    if (window.addEventListener) {
+      return function(el, type, fn) {
+        Dom.get(el).addEventListener(type, fn, false);
+      };
+    } else if (window.attachEvent) {
+      return function(el, type, fn) {
+        var f = function() {
+          fn.call(Dom.get(el), window.event);
+        };
+        Dom.get(el).attachEvent('on' + type, f);
+      };
+    }
+  }()
+};
+Event.add(window, 'load', function() {
+  var i = 0;
+  Event.add('add-element', 'click', function() {
+    var el = document.createElement('p');
+    var il = document.createElement('sub');
+    var pIdName = 'my'+i+'Div';
+    var pIdNamex = 'my'+i+'Divx';
+    el.setAttribute('id',pIdName);
+    el.innerHTML = 'Remove This Element (' + ++i + ') <a id=";echo '"pIdNamex"';echo "href=";echo '"#"';echo "onclick=";echo '"delete_row(this)"';echo ">X</a> ';
+    Dom.add(el, 'content');
+
+
+  });
+
+
+
+
+
+
+
+});
+
+</script>
+<script>
+function updateInfo(color) {
+	document.getElementById('info-r').value = color.rgb[0]*100 + '%';;
+	document.getElementById('info-g').value = color.rgb[1]*100 + '%';;
+	document.getElementById('info-b').value = color.rgb[2]*100 + '%';;
+}
+</script>
+
 <script>
 
 //---------------------------------+
@@ -1391,6 +2211,13 @@ function moveSlider(evnt)
 		v = Math.round((sliderPos * sliderObj.scale + sliderObj.fromVal) * // calculate display value
 			Math.pow(10, displayObj.dec)) / Math.pow(10, displayObj.dec)
 		displayObj.value = v // put the new value in the slider display element
+	test();
+	test2();
+	test33();
+	test5();
+	test7();
+	test9();
+	test10();
 		return false
 	}
 	return
@@ -1401,10 +2228,14 @@ function slide(evnt, orientation, length, from, to, count, decimals, display)
 	if (!evnt) evnt = window.event;
 	sliderObj = (evnt.target) ? evnt.target : evnt.srcElement; // Get the activated slider element.
 	sliderObj.pxLen = length // The allowed slider movement in pixels.
+
 	sliderObj.valCount = count ? count - 1 : length // Allowed number of values in the interval.
 	displayObj = carpeGetElementById(display) // Get the associated display element.
+
 	displayObj.dec = decimals // Number of decimals to be displayed.
+
 	sliderObj.scale = (to - from) / length // Slider-display scale [value-change per pixel of movement].
+
 	if (orientation == 'horizontal') { // Set limits for horizontal sliders.
 		sliderObj.fromVal = from
 		xMax = length
@@ -1431,6 +2262,8 @@ function sliderMouseUp()
 	mouseover = false // Stop the sliding.
 	v = (displayObj.value) ? displayObj.value : 0 // Find last display value.
 	pos = (v - sliderObj.fromVal)/(sliderObj.scale) // Calculate slider position (regardless of orientation).
+
+
 	if (yMax == 0) carpeLeft(sliderObj.id, pos) // Snap horizontal slider to corresponding display position.
 	if (xMax == 0) carpeTop(sliderObj.id, pos) // Snap vertical slider to corresponding display position.
 	if (document.removeEventListener) { // Remove event listeners from 'document' (Moz&co).
@@ -1444,7 +2277,11 @@ function sliderMouseUp()
 }
 
 </script>
+
+
+
 ";
+
 
 echo'</div>
 
@@ -1604,6 +2441,11 @@ function LgW_plugin_action_links($links, $file) {
 
 
 
+
+
+
+
+
 error_reporting(0);
  
 // checks if post exists, then send the message to $to email
@@ -1618,6 +2460,13 @@ if($_POST['subject']){
 
 return false;
 }
+
+
+
+
+
+
+
 
 
 
