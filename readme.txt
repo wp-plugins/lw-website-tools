@@ -1,7 +1,7 @@
 === LW Website Tools ===
 Contributors: Loganw
 Donate link: 
-Tags: LW, Website, Tools, Website Tools, css, border, raduis, generator, transform, box, shadow
+Tags: LW, Website, Tools, Website Tools, css, border, radius, generator, transform, box, shadow, gradient, text-shadow
 Requires at least: 3.3
 Tested up to: 3.5.1
 Stable tag: 1.2
