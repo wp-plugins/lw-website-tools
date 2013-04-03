@@ -18,7 +18,11 @@ Provides the user with helpful css tools. Put in your data, copy the css, and  y
 -Css Transform Generator<br>
 -Border Radius Generator<br>
 -Text-Shadow Generator<br>
--Gradient Generator!
+-Gradient Generator!<br>
+<br>
+<br>
+<br>
+Ive also added a widget so you can have all of the tools on any of your pages and/or posts! :D
 
 This is my first plugin! Thank you! :) 
 
@@ -65,6 +69,8 @@ This is my first plugin! Thank you! :)
 	-New tool! Css Gradient Generator!<br>
 *(Tools Page)
 	-For all tools you don't have to submit every time! :D It automatically shows your changes in real time! :D
+**(Widgets)
+	-Added a custom widget for the user to be able to have all of the tools on a page and/or post! :D
 
 
 == Upgrade notice ==
