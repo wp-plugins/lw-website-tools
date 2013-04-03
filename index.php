@@ -99,7 +99,6 @@ echo '<center><form name="client">
        <option value="client3">Css Transform</option>
        <option value="client4">Text Shadow</option>
        <option value="client5">Css Gradient</option>
-       <option value="client6">test</option>
      </select> 
 </form></center>';
 
