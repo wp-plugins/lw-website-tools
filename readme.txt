@@ -30,6 +30,7 @@ This is my first plugin! Thank you! :)
 
 == Frequently asked questions ==
 
+None
 
 == Screenshots ==
 
