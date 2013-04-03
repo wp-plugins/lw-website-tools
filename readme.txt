@@ -19,6 +19,7 @@ Provides the user with helpful css tools. Put in your data, copy the css, and  y
 -Border Radius Generator<br>
 -Text-Shadow Generator<br>
 -Gradient Generator!<br>
+-Tools Widget! :D<br>
 <br>
 <br>
 <br>
