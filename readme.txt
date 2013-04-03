@@ -30,18 +30,18 @@ This is my first plugin! Thank you! :)
 
 == Frequently asked questions ==
 
-None
+= None =
 
 == Screenshots ==
 
-1. http://www.therecipeminute.com/screenshot-1.png
-2. screenshot-2.png
-3. screenshot-3.png
-4. screenshot-4.png
+1. /assets/screenshot-1.png
+2. /assets/screenshot-2.png
+3. /assets/screenshot-3.png
+4. /assets/screenshot-4.png
 
 == Changelog ==
 
-1.1
+= 1.1 =
 
 ** (Tools)<br>
 	-Added Text Shadow Generator! :)<br>
@@ -57,7 +57,7 @@ None
 * (Border-Radius Generator)<br>
 	-Fixed Alignment<br>
 
-1.2
+= 1.2 =
 
 ** (Text Shadow Generator)<br>
 	-Added color picker in the shadow-color field<br>
