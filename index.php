@@ -44,7 +44,7 @@ function LgW_menu_pages() {
     add_menu_page($page_title, $menu_title, $capability, $menu_slug, $function);
 
     // Add submenu page with same slug as parent to ensure no duplicates
-    $sub_menu_title = 'Settings';
+    $sub_menu_title = 'Tools';
     add_submenu_page($menu_slug, $page_title, $sub_menu_title, $capability, $menu_slug, $function);
 
     // Now add the submenu page for Help
