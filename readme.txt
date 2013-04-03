@@ -68,7 +68,7 @@ This is my first plugin! Thank you! :)
 ** (Tools Page)<br>
 	-New tool! Css Gradient Generator!<br>
 *(Tools Page)
-	-For all tools you don't have to submit every time! :D It automatically shows your changes in real time! :D
+	-For all tools you don't have to submit every time! :D It automatically shows your changes in real time! :D<br>
 **(Widgets)
 	-Added a custom widget for the user to be able to have all of the tools on a page and/or post! :D
 
