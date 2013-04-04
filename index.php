@@ -2,7 +2,7 @@
 /*
 Plugin Name: LW Website Tools
 Plugin URI: 
-Description: Provides the user with helpful css tools. Put in your data, copy the css, and  your ready to go!
+Description: Provides users with three useful Wordpress and css tools.
 Version: 1.2
 Author: Logan Grant Wheeler
 Author URI: 
@@ -2300,9 +2300,42 @@ function LgW_help() {
 
     // Render the HTML for the Help page or include a file that does
 
-echo '<center><div><style>#help
+echo '<center><div><style>';echo "#help
 
-{height:700px;width:500px;}
+{
+
+
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(243,243,243,1) 50%, rgba(237,237,237,1) 51%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(243,243,243,1)), color-stop(51%,rgba(237,237,237,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+
+
+
+}
+
+.submit {
+
+background: rgb(210,255,82); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(210,255,82,1)), color-stop(100%,rgba(145,232,66,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=0 ); /* IE6-9 */
+
+";echo '
+
+
+
+}
+
 
 #help input, #contact-area textarea {
 
@@ -2317,7 +2350,11 @@ echo '<center><div><style>#help
 	height:179px;width:320px;border: 2px solid #ccc;
 }
 
-#help textarea:focus, #contact-area input:focus {
+input:focus {
+border: 2px solid #900;
+}
+
+#help textarea:focus, #help input:focus, input:focus {
 	border: 2px solid #900;
 }
 
@@ -2404,7 +2441,15 @@ echo '?page=LgW-help" onSubmit="return validate(this);"> <center>
 </form></center>';
 
 
- echo '</div></div></center>';
+ echo '</div></div></center>
+
+
+';
+
+
+
+
+
 
 }
 
@@ -2556,12 +2601,28 @@ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
 '; echo "
 
 
+
 padding:1px;
 
 
 
 
 /*style*/
+
+border-top-left-radius:9px;
+border-top-right-radius:9px;
+border-bottom-right-radius:9px;
+border-bottom-left-radius:9px;
+
+-moz-border-top-left-radius:9px;
+-moz-border-top-right-radius:9px;
+-moz-border-bottom-right-radius:9px;
+-moz-border-bottom-left-radius:9px;
+
+-webkit-border-top-left-radius:9px;
+-webkit-border-top-right-radius:9px;
+-webkit-border-bottom-right-radius:9px;
+-webkit-border-bottom-left-radius:9px;
 
 
 ";
@@ -4711,6 +4772,8 @@ echo'</div>
  
 }
 add_action( 'widgets_init', create_function('', 'return register_widget("RandomPostWidget");') );
+
+
 
 
 ?>
