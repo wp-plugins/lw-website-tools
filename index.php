@@ -2551,27 +2551,29 @@ font-weight:100;
 
 {
 
-width:202px;
+width:200px;
 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 '; echo "
 
-
-background: rgb(255,255,255); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(243,243,243,1) 50%, rgba(237,237,237,1) 51%, rgba(255,255,255,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(243,243,243,1)), color-stop(51%,rgba(237,237,237,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+border:solid 1px lightgrey;
+/*style*/
+/* Mozilla Firefox */
+background-image: -moz-linear-gradient(top, #FFFFFF 0%, #1EC6E8 100%);
+/* IE 10 Consumer Preview */
+background-image: -ms-linear-gradient(top, #FFFFFF 0%, #1EC6E8 100%);
+/* Opera */
+background-image: -o-linear-gradient(top, #FFFFFF 0%, #1EC6E8 100%);
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #1EC6E8)); 
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #1EC6E8 100%);
+/* W3C Markup, IE10 Release Preview */
+background-image: linear-gradient(to bottom, #FFFFFF 0%, #1EC6E8 100%);
 
 padding:1px;
 
 
-/*style*/
-box-shadow: 0px 0px 8px 3px;
--webkit-box-shadow: 0px 0px 8px 3px;
--moz-box-shadow: 0px 0px 8px 3px;
+
 
 /*style*/
 
@@ -2795,7 +2797,7 @@ font-weight:100;
 	font-family: Helvetica, sans-serif;
 	font-size: 13px;
 	margin: 0px 0px 10px 0px;
-	border: 2px solid #ccc;
+	border: 1px solid #ccc;
 }
 
 
@@ -2806,7 +2808,7 @@ font-weight:100;
 
 #yay1:focus
 {
-border: 2px solid #900;
+border: 1px solid #900;
 }
 
 
@@ -3081,14 +3083,14 @@ echo '			return false;
 
 <div class="flap">Top Left	<div class="display_holder" id="display_holder_1" >
 		<!-- Default value: 80 -->
-		<input type="text" class="value_display" id="top_left" value="50" onfocus="blur(this);" />
+		<input type="text" class="value_display" id="top_left" value="5" onfocus="blur(this);" />
 	</div>	</div>	<!-- Value display 1 (green) -->
 <!-- Horizontal slider 1 (green) -->
 	<div class="horizontal_track" id="horizontal_track_1" >
 		<div class="horizontal_slit" id="horizontal_slit_1" >&nbsp;</div>
 		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
 			default position: 80 pixels, connected to value_display_1 -->
-		<div class="horizontal_slider" id="horizontal_slider_1" style="left: 38px;"
+		<div class="horizontal_slider" id="horizontal_slider_1" style="left: 5px;"
 			onmousedown="'; echo "slide(event, 'horizontal', 75, 0, 100, 101, 0, 'top_left'"; echo ');myFunction();" >&nbsp;</div>
 
 
@@ -3098,13 +3100,13 @@ echo '			return false;
 <div class="flap">Top Right<!-- Value display 2 (blue)	-->
 	<div class="display_holder" id="display_holder_2" >
 		<!-- Default value: 35 -->
-		<input type="text" class="value_display" id="top_right" value="50" onfocus="blur(this);" />
+		<input type="text" class="value_display" id="top_right" value="5" onfocus="blur(this);" />
 	</div></div>		<!-- Horizontal slider 2 (blue) -->
 	<div class="horizontal_track" id="horizontal_track_2" >
 		<div class="horizontal_slit" id="horizontal_slit_2" >&nbsp;</div>
 		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
 			default position: 35 pixels, connected to value_display_2 -->
-		<div class="horizontal_slider" id="horizontal_slider_2" style="left: 38px;"
+		<div class="horizontal_slider" id="horizontal_slider_2" style="left: 5px;"
 			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'top_right'"; echo ');">
 			&nbsp;
 		</div>
@@ -3114,7 +3116,7 @@ echo '			return false;
 
 <div class="flap">Bottom Left <div class="display_holder" id="display_holder_3" >
 		<!-- Default value: 40 -->
-		<input type="text" class="value_display" id="bottom_left" value="50" onfocus="blur(this);" />
+		<input type="text" class="value_display" id="bottom_left" value="5" onfocus="blur(this);" />
 	</div></div>	<!-- Value display 3 (red)	-->
 
 	<!-- Horizontal slider 3 (red) -->
@@ -3122,13 +3124,13 @@ echo '			return false;
 		<div class="horizontal_slit" id="horizontal_slit_3" >&nbsp;</div>
 		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
 			Default position: 40 pixels, Connected to value_display_3 -->
-		<div class="horizontal_slider" id="horizontal_slider_3" style="left: 38px;"
+		<div class="horizontal_slider" id="horizontal_slider_3" style="left: 5px;"
 			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'bottom_left'";echo ');">&nbsp;</div>
 	</div>
 
 <div class="flap">Bottom Right	<div class="display_holder" id="display_holder_5" >
 		<!-- Default value: 40 -->
-		<input type="text" class="value_display" id="bottom_right" value="50" onfocus="blur(this);" />
+		<input type="text" class="value_display" id="bottom_right" value="5" onfocus="blur(this);" />
 	</div></div>	<!-- Value display 5 (red)	-->
 
 	<!-- Horizontal slider 5 (red) -->
@@ -3136,7 +3138,7 @@ echo '			return false;
 		<div class="horizontal_slit" id="horizontal_slit_5" >&nbsp;</div>
 		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
 			Default position: 40 pixels, Connected to value_display_3 -->
-		<div class="horizontal_slider" id="horizontal_slider_5" style="left: 38px;"
+		<div class="horizontal_slider" id="horizontal_slider_5" style="left: 5px;"
 			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'bottom_right'";echo ');">&nbsp;</div>
 	</div>
 
@@ -3251,7 +3253,7 @@ echo '			return false;
 
 
 <div id="temple1" style="float:right;"></div>
-    <div id="out" style="margin-top:-100px;margin-left:5px;float:right;" >
+    <div id="out" style="margin-top:-75px;margin-left:5px;float:right;" >
     </div>
 </body>
 </div>
@@ -3354,7 +3356,7 @@ alert("Scales the box according to the number. Use 1.0 - 2.0 to be safe :)");
 <div class="flap">Translate X</div>	<!-- Value display 3 (red)	-->
 	<div class="display_holder" id="display_holder_33" >
 		<!-- Default value: 40 -->
-		<input type="text" class="value_display" id="translate_x" value="5" onfocus="blur(this);" />
+		<input type="text" class="value_display" id="translate_x" value="0" onfocus="blur(this);" />
 	</div>
 	<!-- Horizontal slider 3 (red) -->
 	<div class="horizontal_track" id="horizontal_track_33" >
@@ -3368,7 +3370,7 @@ alert("Scales the box according to the number. Use 1.0 - 2.0 to be safe :)");
 <div class="flap">Translate Y</div>	<!-- Value display 5 (red)	-->
 	<div class="display_holder" id="display_holder_53" >
 		<!-- Default value: 40 -->
-		<input type="text" class="value_display" id="translate_y" value="5" onfocus="blur(this);" />
+		<input type="text" class="value_display" id="translate_y" value="0" onfocus="blur(this);" />
 	</div>
 	<!-- Horizontal slider 5 (red) -->
 	<div class="horizontal_track" id="horizontal_track_53" >
