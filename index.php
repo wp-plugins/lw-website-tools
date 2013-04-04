@@ -2365,7 +2365,7 @@ height:25px;
 
 </style>';
    
-echo '<div class="icon32" style="float:none;text-align:left;" id="icon-options-general"></div><center><div id="help-text">LW Help</div></center>';
+echo '<div class="icon32" style="float:none;text-align:left;" id="icon-options-general"></div><center><div id="help-text">Help</div></center>';
  echo '';
 echo ' <p id="thank you"style="width:100%;background-color:#7ccadd;"><h3></h3></p>';
 
