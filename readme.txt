@@ -79,12 +79,7 @@ The Widget! :D
 
 == Upgrade notice ==
 
-** (Text Shadow Generator)<br>
-	-Added color picker in the shadow-color field<br>
-** (Tools Page)<br>
-	-New tool! Css Gradient Generator!<br>
-*(Tools Page)
-	-For all tools you don't have to submit every time! :D It automatically shows your changes in real time! :D
+** New Tools Widget! :D
 
 
 == Notes ==
