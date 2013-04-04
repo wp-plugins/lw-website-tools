@@ -2,7 +2,7 @@
 /*
 Plugin Name: LW Website Tools
 Plugin URI: 
-Description: Provides users with three useful Wordpress and css tools.
+Description: Provides the user with helpful css tools. Put in your data, copy the css, and  your ready to go!
 Version: 1.2
 Author: Logan Grant Wheeler
 Author URI: 
