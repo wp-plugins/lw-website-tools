@@ -2555,20 +2555,6 @@ width:200px;
 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 '; echo "
 
-border:solid 1px lightgrey;
-/*style*/
-/* Mozilla Firefox */
-background-image: -moz-linear-gradient(top, #FFFFFF 0%, #1EC6E8 100%);
-/* IE 10 Consumer Preview */
-background-image: -ms-linear-gradient(top, #FFFFFF 0%, #1EC6E8 100%);
-/* Opera */
-background-image: -o-linear-gradient(top, #FFFFFF 0%, #1EC6E8 100%);
-/* Webkit (Safari/Chrome 10) */
-background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #1EC6E8)); 
-/* Webkit (Chrome 11+) */
-background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #1EC6E8 100%);
-/* W3C Markup, IE10 Release Preview */
-background-image: linear-gradient(to bottom, #FFFFFF 0%, #1EC6E8 100%);
 
 padding:1px;
 
@@ -2576,21 +2562,6 @@ padding:1px;
 
 
 /*style*/
-
-border-top-left-radius:9px;
-border-top-right-radius:9px;
-border-bottom-right-radius:9px;
-border-bottom-left-radius:9px;
-
--moz-border-top-left-radius:9px;
--moz-border-top-right-radius:9px;
--moz-border-bottom-right-radius:9px;
--moz-border-bottom-left-radius:9px;
-
--webkit-border-top-left-radius:9px;
--webkit-border-top-right-radius:9px;
--webkit-border-bottom-right-radius:9px;
--webkit-border-bottom-left-radius:9px;
 
 
 ";
