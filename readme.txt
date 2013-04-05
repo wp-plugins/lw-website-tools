@@ -55,32 +55,6 @@ The Widget! :D
 
 == Changelog ==
 
-= 1.1 =
-
-** (Tools)<br>
-	-Added Text Shadow Generator! :)<br>
-* (Admin Bar)<br>
-	-Changed admin bar text from "Website Tools" To LW Website Tools<br>
-* (Tools Page)<br>
-	-Major improvement with colors and fonts.<br>
-	-Added scrollbars instead of input fields!<br>
-* (Help Page)<br>
-	-Major improvement with colors and fonts.<br>
-* (Css Transform)<br>
-	-Added help dialog to the scale field, incase the user scales the div too far out<br>
-* (Border-Radius Generator)<br>
-	-Fixed Alignment<br>
-
-= 1.2 =
-
-** (Text Shadow Generator)<br>
-	-Added color picker in the shadow-color field<br>
-** (Tools Page)<br>
-	-New tool! Css Gradient Generator!<br>
-*(Tools Page)
-	-For all tools you don't have to submit every time! :D It automatically shows your changes in real time! :D<br>
-**(Widgets)
-	-Added a custom widget for the user to be able to have all of the tools on a page and/or post! :D
 
 = 1.2.1 =
 Major Update!<br>
@@ -96,6 +70,34 @@ Major Update!<br>
 	-Shortcodes ('[lradius_tool]') Displays the radius tool as a small widget!<br
 	-Shortcodes ('[lbox_shadow']) Displays the box-shadow tool as a small widget! :D<br>
 
+
+= 1.2 =
+
+** (Text Shadow Generator)<br>
+	-Added color picker in the shadow-color field<br>
+** (Tools Page)<br>
+	-New tool! Css Gradient Generator!<br>
+*(Tools Page)
+	-For all tools you don't have to submit every time! :D It automatically shows your changes in real time! :D<br>
+**(Widgets)
+	-Added a custom widget for the user to be able to have all of the tools on a page and/or post! :D
+
+
+= 1.1 =
+
+** (Tools)<br>
+	-Added Text Shadow Generator! :)<br>
+* (Admin Bar)<br>
+	-Changed admin bar text from "Website Tools" To LW Website Tools<br>
+* (Tools Page)<br>
+	-Major improvement with colors and fonts.<br>
+	-Added scrollbars instead of input fields!<br>
+* (Help Page)<br>
+	-Major improvement with colors and fonts.<br>
+* (Css Transform)<br>
+	-Added help dialog to the scale field, incase the user scales the div too far out<br>
+* (Border-Radius Generator)<br>
+	-Fixed Alignment<br>
 
 
 == Upgrade notice ==
