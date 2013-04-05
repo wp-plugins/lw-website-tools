@@ -3,7 +3,7 @@
 Plugin Name: LW Website Tools
 Plugin URI: 
 Description: Provides users with three useful Wordpress and css tools.
-Version: 1.2
+Version: 1.2.1
 Author: Logan Grant Wheeler
 Author URI: 
 License: lw_tools
@@ -63,11 +63,102 @@ function LgW_settings() {
     }
 echo '
 
+
+
+  <script type="text/javascript">
+ 
+      //object of the element to be moved
+      _item = null;
+ 
+      //stores x & y co-ordinates of the mouse pointer
+      mouse_x = 0;
+      mouse_y = 0;
+ 
+      // stores top,left values (edge) of the element
+      ele_x = 0;
+      ele_y = 0;
+ 
+      //bind the functions
+      function move_init()
+      {
+        document.onmousemove = _move;
+        document.onmouseup = _stop;
+      }
+ 
+      //destroy the object when we are done
+      function _stop()
+      {
+        _item = null;
+      }
+ 
+      //main functions which is responsible for moving the element (div in our example)
+      function _move(e)
+      {
+        mouse_x = document.all ? window.event.clientX : e.pageX;
+        mouse_y = document.all ? window.event.clientY : e.pageY;
+        if(_item != null)
+        { 
+          _item.style.left = (mouse_x - ele_x) + "px";
+          _item.style.top = (mouse_y - ele_y) + "px";
+        }
+      }
+ 
+      //will be called when use starts dragging an element
+      function _move_item(ele)
+      {
+        //store the object of the element which needs to be moved
+        _item = ele;
+        ele_x = mouse_x - _item.offsetLeft;
+        ele_y = mouse_y - _item.offsetTop;
+ 
+      }
+
+
+
+
+
+    </script>
+
+  <body onload="move_init()">
+<div class="question" onmousedown="_move_item(this);"><center> <a class="help text" href="admin.php?page=LgW-settings"><img src="/wp-content/plugins/lw-website-tools/images/contact.png"></a><br><sub>Questions/Concerns/Suggestions?<br>
+Shoot us an email!</sub></center><form method="post" action="';
+
+echo $_SERVER['PHP_SELF'];
+
+echo '?page=LgW-settings" onSubmit="return validate(this);"> <center>
+   
+   <center> <fieldset id="user-details">
+  <label for="name">Name *</label>
+  <input type="text" name="name" id="name" value="" required="required" /><br/>
+     
+  <label for="email">Email *</label>
+  <input type="email" name="email" id="email" value="" required="required"  /> <br/>
+     
+  <label for="subject">Subject *</label>
+  <input type="text" name="subject" id="subject" value="" required="required" /><br/>
+   
+  <label for="message">Message </label><br>
+  <textarea name="message" id="message" rows="0" cols="0"></textarea><br/>
+   
+  <input type="submit" value="Send Message" onclick="myAwesomeFunction()" name="submit" id="submit" class="submit" style="width:100px;" />
+    </fieldset></center>
+     (Message automatically sends after submitting)
+</form></center>';
+
+
+ echo '</div>';
+ echo '
+  </body>
+
+
+<script>
+function myAwesomeFunction()
+{
+alert("Your message has been sent! Thank you! and we will reply within the next 48 hours!");
+}
+</script>
+
 <center><body onload="changeColor();"><div id="main-body" style="padding-left:30px;height:850px;background-color:#fff;padding-top:20px;"><div id="theme-options-wrap" style=""><div class="icon32" style="float:none;text-align:left;" id="icon-tools"></div><div id="header-text" style="width:500px;height:100px;">Tools</div></div>
-
-
-
-
 ';
 
 echo '<script type="text/javascript">
@@ -103,6 +194,57 @@ echo '<center><form name="client">
 </form></center>';
 
 echo '<style>
+
+
+
+      #ele{
+        background-color: #797979;
+        color: #fff;
+        width: 300px;
+        height:100px;
+        cursor: move;
+        position: relative;
+        padding: 10px;
+      }
+
+
+.question {
+height:50px;
+width:300px;
+color:lightgrey;
+overflow:hidden;
+position:absolute;
+right:0px;
+top:50px;
+
+}
+
+.question:hover {
+';echo"";echo '
+height:350px;
+width:300px;
+color:black;
+top:50px;
+right:0px;
+position:absolute;
+background-color:white;
+text-align:left;
+z-index:2000;
+
+ -moz-transition:width 0.3s, height 0.3s, background-color 0.3s, -moz-transform 0.3s;
+    -webkit-transition:width 0.3s, height 0.3s, background-color 0.3s, -webkit-transform 0.3s;
+    -o-transition:width 0.3s, height 0.3s, background-color 0.3s, -o-transform 0.3s;
+    transition:width 0.3s, height 0.3s, background-color 0.3s, transform 0.3s;
+}
+
+
+.question textarea {
+width:180px;
+}
+.question input {
+width:140px;
+}
+
 
 #header-text
 
@@ -143,7 +285,6 @@ background: -o-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 10
 background: -ms-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* IE10+ */
 background: linear-gradient(to bottom,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=0 ); /* IE6-9 */
-
 height:500px;
 width:500px;
 font-size:50px;
@@ -310,7 +451,11 @@ font-weight:100;
 
 #client1
 
-{height:700px;width:900px;}
+{height:700px;width:900px;
+ -moz-transition:width 1s, height 1s, background-color 1s, display 1s, -moz-transform 1s;
+    -webkit-transition:width 1s, height 1s, background-color 1s,display 1s,  -webkit-transform 1s;
+    -o-transition:width 1s, height 1s, background-color 1s,display 1s,  -o-transform 1s;
+    transition:width 1s, height 1s, background-color 1s, display 1s, transform 1s;}
 
 
 #help
@@ -2402,9 +2547,47 @@ height:25px;
 
 </style>';
    
-echo '<div class="icon32" style="float:none;text-align:left;" id="icon-options-general"></div><center><div id="help-text">Help</div></center>';
+echo '<div class="icon32" style="float:none;text-align:left;" id="icon-options-general"></div><center><div id="help-text">Help</div><br>
+
+ <script language="javascript">
+        function MyFunction(divName){
+
+        //hidden val
+        var hiddenVal = document.getElementById("tempDivName"); 
+
+        //hide old
+        if(hiddenVal.Value != undefined){
+            var oldDiv = document.getElementById(hiddenVal.Value); 
+            oldDiv.style.display = ';echo "'none'; 
+        }
+
+        //show div
+            var tempDiv = document.getElementById(divName); 
+            tempDiv.style.display = 'block'";echo ';              
+
+        //save div ID
+            hiddenVal.Value = document.getElementById(divName).getAttribute("id");
+
+        }
+    </script>
+    <input id="tempDivName" type="hidden" />
+ <a class="help text" href="#" OnClick="MyFunction(';echo "'myDiv1'";echo ');"><img src="/wp-content/plugins/lw-website-tools/images/contact.png"></a><a class="helptext" href="#" OnClick="MyFunction(';echo "'myDiv2'";echo ');"><img src="/wp-content/plugins/lw-website-tools/images/shortcodes.png"></a>
+
+
+    <br/>
+
+<style>
+.helptext {
+text-decoration:none;
+color:grey;
+font-size:20px;
+}
+</style>
+
+
+</center>';
  echo '';
-echo ' <p id="thank you"style="width:100%;background-color:#7ccadd;"><h3></h3></p>';
+echo ' <div id="myDiv1" style="display:none;"><p id="thank you"style="width:100%;background-color:#7ccadd;"><h3></h3></p>';
 
 echo '
 <div id="help-text3">Questions/Concerns/Suggestions?</div><div id="help-text2">Shoot us an email!</div>
@@ -2425,10 +2608,7 @@ echo '?page=LgW-help" onSubmit="return validate(this);"> <center>
      
   <label for="email">Email *</label>
   <input type="email" name="email" id="email" value="" required="required"  /> <br/>
-     
-  <label for="site">Site</label> 
-  <input type="url" name="site" id="site" value="" /><br/>
-     
+
   <label for="subject">Subject *</label>
   <input type="text" name="subject" id="subject" value="" required="required" /><br/>
    
@@ -2441,7 +2621,1442 @@ echo '?page=LgW-help" onSubmit="return validate(this);"> <center>
 </form></center>';
 
 
- echo '</div></div></center>
+ echo '</div>
+
+
+
+
+<div id="myDiv2" style="display:none;">
+
+<table>
+<tr>
+<td><h4>Shortcode</h4></td>
+<td><h4>Output</h4></td>
+</tr>
+<tr>
+<td>
+[radius_tool]:
+</td>
+<td>
+<style>
+
+';echo " 
+}
+
+
+#temple2 {
+
+background: rgb(210,255,82); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(210,255,82,1)), color-stop(100%,rgba(145,232,66,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=0 ); /* IE6-9 */
+height:100px;
+width:100px;
+font-size:10px;
+
+}
+
+
+#temple3 {
+
+background: rgb(210,255,82); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(210,255,82,1)), color-stop(100%,rgba(145,232,66,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=0 ); /* IE6-9 */
+height:100px;
+width:100px;
+font-size:10px;
+
+}
+
+
+#temple8 {
+
+background: rgb(210,255,82); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(210,255,82,1)), color-stop(100%,rgba(145,232,66,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=0 ); /* IE6-9 */
+height:100px;
+width:100px;
+font-size:10px;
+
+}
+
+
+
+#temple4 {
+
+background: rgb(210,255,82); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(210,255,82,1)), color-stop(100%,rgba(145,232,66,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=0 ); /* IE6-9 */
+height:100px;
+width:100px;
+font-size:10px;
+
+}
+
+#temple7 {
+
+/*style*/
+/* Mozilla Firefox */
+background-image: -moz-linear-gradient(top, #FFFFFF 0%, #91E842 100%);
+/* IE 10 Consumer Preview */
+background-image: -ms-linear-gradient(top, #FFFFFF 0%, #91E842 100%);
+/* Opera */
+background-image: -o-linear-gradient(top, #FFFFFF 0%, #91E842 100%);
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #91E842)); 
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #91E842 100%);
+/* W3C Markup, IE10 Release Preview */
+background-image: linear-gradient(to bottom, #FFFFFF 0%, #91E842 100%);
+height:100px;
+width:100px;
+font-size:10px;
+
+}
+
+
+
+#temple9 {
+
+background-image: -moz-linear-gradient(top right, #FFFFFF 0%, #61A0E8 100%);/* IE 10 Consumer Preview */
+background-image: -ms-linear-gradient(top right, #FFFFFF 0%, #61A0E8 100%);
+/* Opera */
+background-image: -o-linear-gradient(top right, #FFFFFF 0%, #61A0E8 100%);
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #61A0E8)); 
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(top right, #FFFFFF 0%, #61A0E8 100%);
+/* W3C Markup, IE10 Release Preview */
+background-image: linear-gradient(to bottom left, #FFFFFF 0%, #61A0E8 100%);
+height:100px;
+width:100px;
+font-size:10px;
+
+}
+
+
+#temple10 {
+
+/*style*/
+background-image: -moz-linear-gradient(top left, #FFFFFF 0%, #E86DA2 100%);/* IE 10 Consumer Preview */
+background-image: -ms-linear-gradient(top left, #FFFFFF 0%, #E86DA2 100%);
+/* Opera */
+background-image: -o-linear-gradient(top left, #FFFFFF 0%, #E86DA2 100%);
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #E86DA2)); 
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(top left, #FFFFFF 0%, #E86DA2 100%);
+/* W3C Markup, IE10 Release Preview */
+background-image: linear-gradient(to bottom right, #FFFFFF 0%, #E86DA2 100%);
+height:100px;
+width:100px;
+font-size:10px;
+
+}
+
+";echo '
+
+
+h2
+{
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+font-weight:100;
+}
+
+
+#client5
+
+{height:200px;width:200px;}
+
+#client4
+
+{height:200px;width:200px;}
+
+#client3
+
+{height:200px;width:200px;}
+
+#idone
+
+{height:200px;width:200px;}
+
+#client2
+
+{height:200px;width:200px;}
+
+#client1
+
+{height:200px;width:200px;}
+
+
+#help
+
+{height:200px;width:200px;}
+
+#yay1 select 
+
+{
+
+
+}
+
+
+#yay1
+{
+	overflow:hidden;
+	padding: 5px;
+	width: 100px;
+	font-family: Helvetica, sans-serif;
+	font-size: 13px;
+	margin: 0px 0px 10px 0px;
+	border: 1px solid #ccc;
+}
+
+
+#plugin-title {
+  background-image: url(http://www.therecipeminute.com/header.png);
+}
+
+
+#yay1:focus
+{
+border: 1px solid #900;
+}
+
+
+
+#idone input, #contact-area textarea {
+	padding: 5px;
+	width: 200px;
+	font-family: Helvetica, sans-serif;
+	font-size: 1.4em;
+	margin: 0px 0px 10px 0px;
+	border: 2px solid #ccc;
+}
+
+#idone textarea {
+	height:179px;width:320px;border: 2px solid #ccc;
+}
+
+#idone textarea:focus, #contact-area input:focus {
+	border: 2px solid #900;
+}
+
+#idone input.submit-button {
+	width: 100px;
+	float: right;
+}
+
+#idone label {
+	float: left;
+	text-align: left;
+	width: 100px;
+	padding-top: 5px;
+	font-size: 1.0em;
+	margin-left:50px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+font-weight:200;
+}
+
+#x {
+	background-color: #bdb;
+	color: #363;
+	}
+
+
+
+#y {
+	background-color: #bcd;
+	color: #258;
+	}
+
+
+#blur {
+	background-color: #dbb;
+	color: #933;
+	}
+
+
+
+#horizontal_length {
+	background-color: #bdb;
+	color: #363;
+	}
+
+#vertical_length {
+	background-color: #bcd;
+	color: #258;
+	}
+
+#blur_radius {
+	background-color: #dbb;
+	color: #933;
+	}
+
+#spread {
+	background-color: #d9bbdb;
+	color: #8d3393;
+	}
+
+
+#top_left {
+	background-color: #bdb;
+	color: #363;
+	}
+
+#top_right {
+	background-color: #bcd;
+	color: #258;
+	}
+
+#bottom_left {
+	background-color: #dbb;
+	color: #933;
+	}
+
+#bottom_right {
+	background-color: #d9bbdb;
+	color: #8d3393;
+	}
+
+#skew_x {
+	background-color: #bdb;
+	color: #363;
+	}
+
+#skew_y {
+	background-color: #ddddbc;
+	color: #888525;
+	}
+
+#scale {
+	background-color: #bdb;
+	color: #363;
+	}
+
+#rotate {
+	background-color: #bcd;
+	color: #258;
+	}
+
+#translate_x {
+	background-color: #dbb;
+	color: #933;
+	}
+
+#translate_y {
+	background-color: #d9bbdb;
+	color: #8d3393;
+	}
+
+
+#the_first_color_number {
+	background-color: #ffffff;
+	}
+
+#the_second_color_number {
+	background-color: #91e842;
+	}
+
+
+
+
+
+#the_first_color_number2 {
+	background-color: #ffffff;
+	}
+
+#the_second_color_number2 {
+	background-color: #61A0E8;
+	}
+
+
+
+#the_first_color_number3 {
+	background-color: #ffffff;
+	}
+
+#the_second_color_number3 {
+	background-color: #E86DA2;
+	}
+
+
+
+.to-top
+{
+display:inline-block;
+height:50px;
+width:50px;
+/*style*/
+/* Mozilla Firefox */
+background-image: -moz-linear-gradient(top, #FFFFFF 0%, #91E842 100%);
+/* IE 10 Consumer Preview */
+background-image: -ms-linear-gradient(top, #FFFFFF 0%, #91E842 100%);
+/* Opera */
+background-image: -o-linear-gradient(top, #FFFFFF 0%, #91E842 100%);
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #91E842)); 
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #91E842 100%);
+/* W3C Markup, IE10 Release Preview */
+background-image: linear-gradient(to bottom, #FFFFFF 0%, #91E842 100%);
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+}
+
+.top-right
+{
+
+display:inline-block;
+height:50px;
+width:50px;
+background-image: -moz-linear-gradient(top right, #FFFFFF 0%, #61A0E8 100%);/* IE 10 Consumer Preview */
+background-image: -ms-linear-gradient(top right, #FFFFFF 0%, #61A0E8 100%);
+/* Opera */
+background-image: -o-linear-gradient(top right, #FFFFFF 0%, #61A0E8 100%);
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #61A0E8)); 
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(top right, #FFFFFF 0%, #61A0E8 100%);
+/* W3C Markup, IE10 Release Preview */
+background-image: linear-gradient(to bottom left, #FFFFFF 0%, #61A0E8 100%);
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+}
+
+
+.top-left
+{
+
+display:inline-block;
+height:50px;
+width:50px;
+
+/*style*/
+background-image: -moz-linear-gradient(top left, #FFFFFF 0%, #E86DA2 100%);/* IE 10 Consumer Preview */
+background-image: -ms-linear-gradient(top left, #FFFFFF 0%, #E86DA2 100%);
+/* Opera */
+background-image: -o-linear-gradient(top left, #FFFFFF 0%, #E86DA2 100%);
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #E86DA2)); 
+/* Webkit (Chrome 11+) */
+background-image: -webkit-linear-gradient(top left, #FFFFFF 0%, #E86DA2 100%);
+/* W3C Markup, IE10 Release Preview */
+background-image: linear-gradient(to bottom right, #FFFFFF 0%, #E86DA2 100%);
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+
+
+}
+.flap {
+width:100px;
+font-size:10px;
+}
+
+
+
+
+
+
+*.horizontal_track {
+	background-color: #bbb;
+	width: 90px;
+	line-height: 0px;
+	font-size: 0px;
+	text-align: left;
+	padding: 4px;
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+}
+*.horizontal_slider {
+	background-color: #666;
+	width: 10px;
+	height: 10px;
+	position: relative;
+	z-index: 2;
+	line-height: 0;
+	margin: 0;
+	border: 2px solid;
+	border-color: #999 #333 #333 #999;
+}
+*.horizontal_slit {
+	background-color: #333;
+	width: 80px;
+	height: 5px;
+	margin: 4px 4px 2px 4px;
+	line-height: 0;
+	position: absolute;
+	z-index: 1;
+	border: 1px solid;
+	border-color: #999 #ddd #ddd #999;
+}
+*.vertical_track {
+	background-color: #bbb;
+	padding: 3px 5px 15px 5px;
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+}
+*.vertical_slider {
+	background-color: #666;
+	width: 18px;
+	height: 8px;
+	font: 0px;
+	text-align: left;
+	line-height: 0px;
+	position: relative;
+	z-index: 1;
+	border: 2px solid;
+	border-color: #999 #333 #333 #999;
+}
+*.vertical_slit {
+	background-color: #000;
+	width: 2px;
+	height: 100px;
+	position: absolute;
+	margin: 4px 10px 4px 10px;
+	padding: 4px 0 1px 0;
+	line-height: 0;
+	font-size: 0;
+	border: 1px solid;
+	border-color: #666 #ccc #ccc #666;
+}
+*.display_holder {
+	display:none;
+	margin-top:0px;
+	float:right;
+	background-color: #bbb;
+	color: #fff;
+	width: 25px;
+	text-align: right;
+	padding: 0;
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+}
+.value_display {
+
+	background-color: #bbb;
+	color: #333;
+	width: 20px;
+	margin: 0 2px;
+	text-align: right;
+	font-size: 10pt;
+	font-face: verdana, arial, helvetica, sans-serif;
+	font-weight: bold;
+	line-height: 12px;
+	border: 0;
+	cursor: default;
+}
+
+
+
+
+#horizontal_slider_7 {
+	background-color: #ffffff;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_7, #display_holder_7 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_7 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_7 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+
+#horizontal_slider_1 {
+	background-color: #696;
+	border-color: #9c9 #363 #363 #9c9;
+	}
+#horizontal_track_1, #display_holder_1 {
+	background-color: #bdb;
+	border-color: #ded #9a9 #9a9 #ded;
+	}
+#horizontal_slit_1 {
+	background-color: #fff;
+	border-color: #9a9 #ded #ded #9a9;
+	}
+#value_display_1 {
+	background-color: #bdb;
+	color: #363;
+	}
+#horizontal_slider_2 {
+	background-color: #369;
+	border-color: #69c #036 #036 #69c;
+	}
+#horizontal_track_2, #display_holder_2 {
+	background-color: #bcd;
+	border-color: #def #9ab #9ab #def;
+	}
+#horizontal_slit_2 {
+	background-color: #fff;
+	border-color: #9ab #def #def #9ab;
+	}
+#value_display_2 {
+	background-color: #bcd;
+	color: #258;
+	}
+#horizontal_slider_3 {
+	background-color: #c33;
+	border-color: #f66 #933 #933 #f66;
+	}
+#horizontal_track_3, #display_holder_3 {
+	background-color: #dbb;
+	border-color: #fdd #b99 #b99 #fdd;
+	}
+#horizontal_slit_3 {
+	background-color: #fff;
+	border-color: #b99 #fdd #fdd #b99;
+	}
+#value_display_3 {
+	background-color: #dbb;
+	color: #933;
+	}
+#horizontal_slider_5 {
+	background-color: #9233c3;
+	border-color: #bb66f1 #8d3393 #8d3393 #bb66f1;
+	}
+#horizontal_track_5, #display_holder_5 {
+	background-color: #d9bbdb;
+	border-color: #fcddfd #b699b9 #b699b9 #fcddfd;
+	}
+#horizontal_slit_5 {
+	background-color: #fff;
+	border-color: #b699b9 #fcddfd #fcddfd #b699b9;
+	}
+#value_display_5 {
+	background-color: #d9bbdb;
+	color: #8d3393;
+	}
+	
+#horizontal_slider_51 {
+	background-color: #9233c3;
+	border-color: #bb66f1 #8d3393 #8d3393 #bb66f1;
+	}
+#horizontal_track_51, #display_holder_51 {
+	background-color: #d9bbdb;
+	border-color: #fcddfd #b699b9 #b699b9 #fcddfd;
+	}
+#horizontal_slit_51 {
+	background-color: #fff;
+	border-color: #b699b9 #fcddfd #fcddfd #b699b9;
+	}
+#value_display_51 {
+	background-color: #d9bbdb;
+	color: #8d3393;
+	}
+
+#horizontal_slider_11 {
+	background-color: #696;
+	border-color: #9c9 #363 #363 #9c9;
+	}
+#horizontal_track_11, #display_holder_11 {
+	background-color: #bdb;
+	border-color: #ded #9a9 #9a9 #ded;
+	}
+#horizontal_slit_11 {
+	background-color: #fff;
+	border-color: #9a9 #ded #ded #9a9;
+	}
+#value_display_11 {
+	background-color: #bdb;
+	color: #363;
+	}
+#horizontal_slider_21 {
+	background-color: #369;
+	border-color: #69c #036 #036 #69c;
+	}
+#horizontal_track_21, #display_holder_21 {
+	background-color: #bcd;
+	border-color: #def #9ab #9ab #def;
+	}
+#horizontal_slit_21 {
+	background-color: #fff;
+	border-color: #9ab #def #def #9ab;
+	}
+#value_display_21 {
+	background-color: #bcd;
+	color: #258;
+	}
+#horizontal_slider_31 {
+	background-color: #c33;
+	border-color: #f66 #933 #933 #f66;
+	}
+#horizontal_track_31, #display_holder_31 {
+	background-color: #dbb;
+	border-color: #fdd #b99 #b99 #fdd;
+	}
+#horizontal_slit_31 {
+	background-color: #fff;
+	border-color: #b99 #fdd #fdd #b99;
+	}
+#value_display_31 {
+	background-color: #dbb;
+	color: #933;
+	}
+
+
+
+
+
+
+
+#horizontal_slider_73 {
+	background-color: #c3c133;
+	border-color: #f1ef66 #939233 #939233 #f1ef66;
+	}
+#horizontal_track_73, #display_holder_73 {
+	background-color: #dbdabb;
+	border-color: #fdfddd #b9b999 #b699b9 #fdfddd;
+	}
+#horizontal_slit_73 {
+	background-color: #fff;
+	border-color: #b699b9 #fdfddd #fdfddd #b699b9;
+	}
+#value_display_73 {
+	background-color: #dbdabb;
+	color: #939033;
+	}
+
+
+
+
+
+#horizontal_slider_63 {
+	background-color: #696;
+	border-color: #9c9 #363 #363 #9c9;
+	}
+#horizontal_track_63, #display_holder_63 {
+	background-color: #bdb;
+	border-color: #ded #9a9 #9a9 #ded;
+	}
+#horizontal_slit_63 {
+	background-color: #fff;
+	border-color: #9a9 #ded #ded #9a9;
+	}
+#value_display_63 {
+	background-color: #bdb;
+	color: #363;
+	}
+
+
+#horizontal_slider_53 {
+	background-color: #9233c3;
+	border-color: #bb66f1 #8d3393 #8d3393 #bb66f1;
+	}
+#horizontal_track_53, #display_holder_53 {
+	background-color: #d9bbdb;
+	border-color: #fcddfd #b699b9 #b699b9 #fcddfd;
+	}
+#horizontal_slit_53 {
+	background-color: #fff;
+	border-color: #b699b9 #fcddfd #fcddfd #b699b9;
+	}
+#value_display_53 {
+	background-color: #d9bbdb;
+	color: #8d3393;
+	}
+
+
+#horizontal_slider_71 {
+	background-color: #91E842;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_71, #display_holder_71 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_71 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_71 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+#horizontal_slider_8 {
+	background-color: #91E842;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_8, #display_holder_8 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_8 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_8 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+
+#horizontal_slider_81 {
+	background-color: #91E842;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_81, #display_holder_81 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_81 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_81 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+
+
+#horizontal_slider_9 {
+	background-color: #ffffff;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_9, #display_holder_9 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_9 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_9 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+
+
+
+#horizontal_slider_91 {
+	background-color: 61A0E8#;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_91, #display_holder_91 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_91 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_91 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+#horizontal_slider_10 {
+	background-color: #ffffff;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_10, #display_holder_10 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_10 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_10 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+
+
+
+#horizontal_slider_101 {
+	background-color: #E86DA2;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_101, #display_holder_101 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_101 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_101 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+
+
+
+
+#horizontal_slider_13 {
+	background-color: #696;
+	border-color: #9c9 #363 #363 #9c9;
+	}
+#horizontal_track_13, #display_holder_13 {
+	background-color: #bdb;
+	border-color: #ded #9a9 #9a9 #ded;
+	}
+#horizontal_slit_13 {
+	background-color: #fff;
+	border-color: #9a9 #ded #ded #9a9;
+	}
+#value_display_13 {
+	background-color: #bdb;
+	color: #363;
+	}
+#horizontal_slider_23 {
+	background-color: #369;
+	border-color: #69c #036 #036 #69c;
+	}
+#horizontal_track_23, #display_holder_23 {
+	background-color: #bcd;
+	border-color: #def #9ab #9ab #def;
+	}
+#horizontal_slit_23 {
+	background-color: #fff;
+	border-color: #9ab #def #def #9ab;
+	}
+#value_display_23 {
+	background-color: #bcd;
+	color: #258;
+	}
+#horizontal_slider_33 {
+	background-color: #c33;
+	border-color: #f66 #933 #933 #f66;
+	}
+#horizontal_track_33, #display_holder_33 {
+	background-color: #dbb;
+	border-color: #fdd #b99 #b99 #fdd;
+	}
+#horizontal_slit_33 {
+	background-color: #fff;
+	border-color: #b99 #fdd #fdd #b99;
+	}
+#value_display_33 {
+	background-color: #dbb;
+	color: #933;
+	}
+
+
+
+#horizontal_slider_12 {
+	background-color: #696;
+	border-color: #9c9 #363 #363 #9c9;
+	}
+#horizontal_track_12, #display_holder_12 {
+	background-color: #bdb;
+	border-color: #ded #9a9 #9a9 #ded;
+	}
+#horizontal_slit_12 {
+	background-color: #fff;
+	border-color: #9a9 #ded #ded #9a9;
+	}
+#value_display_12 {
+	background-color: #bdb;
+	color: #363;
+	}
+#horizontal_slider_22 {
+	background-color: #369;
+	border-color: #69c #036 #036 #69c;
+	}
+#horizontal_track_22, #display_holder_22 {
+	background-color: #bcd;
+	border-color: #def #9ab #9ab #def;
+	}
+#horizontal_slit_22 {
+	background-color: #fff;
+	border-color: #9ab #def #def #9ab;
+	}
+#value_display_22 {
+	background-color: #bcd;
+	color: #258;
+	}
+#horizontal_slider_32 {
+	background-color: #c33;
+	border-color: #f66 #933 #933 #f66;
+	}
+#horizontal_track_32, #display_holder_32 {
+	background-color: #dbb;
+	border-color: #fdd #b99 #b99 #fdd;
+	}
+#horizontal_slit_32 {
+	background-color: #fff;
+	border-color: #b99 #fdd #fdd #b99;
+	}
+#value_display_32 {
+	background-color: #dbb;
+	color: #933;
+	}
+
+	
+
+</style>
+
+<div id="client1"><script type="text/javascript">';
+echo "	    function test2(){
+
+			var tl = document.getElementById('top_left').value;
+			var tr = document.getElementById('top_right').value;
+			var bl = document.getElementById('bottom_left').value;
+			var br = document.getElementById('bottom_right').value;
+";
+
+
+			echo "document.getElementById('out2').innerHTML =";
+
+
+echo ' "<style>#temple3" + "{" + "border-top-left-radius:" + tl + "px;border-top-right-radius:" + tr + "px;border-bottom-right-radius:" + br + "px;border-bottom-left-radius:" + bl + "px;-moz-border-top-left-radius:" + tl + "px;-moz-border-top-right-radius:" + tr + "px;-moz-border-bottom-right-radius:" + br + "px;-moz-border-bottom-left-radius:" + bl + "px;-webkit-border-top-left-radius:" + tl + "px;-webkit-border-top-right-radius:" + tr + "px;-webkit-border-bottom-right-radius:" + br + "px;-webkit-border-bottom-left-radius:" + bl + "px;" + "}" + "</style>" + "" + "';
+
+echo "<textarea style='height:100px;width:100px;float:right;'";
+
+echo '>" + "/*style*/" + "&#013;" + "&#013;" + "border-top-left-radius:" + tl + "px;" + "&#013;" + "border-top-right-radius:" + tr + "px;" + "&#013;" + "border-bottom-right-radius:" + br + "px;" + "&#013;" + "border-bottom-left-radius:" + bl + "px;" + "&#013;" + "&#013;" + "-moz-border-top-left-radius:" + tl + "px;" + "&#013;" + "-moz-border-top-right-radius:" + tr + "px;" + "&#013;" + "-moz-border-bottom-right-radius:" + br + "px;" + "&#013;" + "-moz-border-bottom-left-radius:" + bl + "px;" + "&#013;" + "&#013;" + "-webkit-border-top-left-radius:" + tl + "px;" + "&#013;" + "-webkit-border-top-right-radius:" + tr + "px;" + "&#013;" + "-webkit-border-bottom-right-radius:" + br + "px;" + "&#013;" + "-webkit-border-bottom-left-radius:" + bl + "px;" + "</textarea>" + "<div id=';
+echo "''>"; echo '</div>";';
+echo "
+			document.getElementById('out2').style.display ="; echo ' "block";';
+
+echo '			return false;
+		}
+	</script>
+
+	<script type="text/javascript" src="/wp-content/plugins/lw-website-tools/js/jscolor.js"></script>
+
+</head>
+
+<body>
+    <form style="float:left;height:100%;width:100px;" action="" onsubmit="return test2()">
+
+
+
+<div class="flap">Top Left	<div class="display_holder" id="display_holder_1" >
+		<!-- Default value: 80 -->
+		<input type="text" class="value_display" id="top_left" value="5" onfocus="blur(this);" />
+	</div>	</div>	<!-- Value display 1 (green) -->
+<!-- Horizontal slider 1 (green) -->
+	<div class="horizontal_track" id="horizontal_track_1" >
+		<div class="horizontal_slit" id="horizontal_slit_1" >&nbsp;</div>
+		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
+			default position: 80 pixels, connected to value_display_1 -->
+		<div class="horizontal_slider" id="horizontal_slider_1" style="left: 5px;"
+			onmousedown="'; echo "slide(event, 'horizontal', 75, 0, 100, 101, 0, 'top_left'"; echo ');myFunction();" >&nbsp;</div>
+
+
+	</div>
+
+
+<div class="flap">Top Right<!-- Value display 2 (blue)	-->
+	<div class="display_holder" id="display_holder_2" >
+		<!-- Default value: 35 -->
+		<input type="text" class="value_display" id="top_right" value="5" onfocus="blur(this);" />
+	</div></div>		<!-- Horizontal slider 2 (blue) -->
+	<div class="horizontal_track" id="horizontal_track_2" >
+		<div class="horizontal_slit" id="horizontal_slit_2" >&nbsp;</div>
+		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
+			default position: 35 pixels, connected to value_display_2 -->
+		<div class="horizontal_slider" id="horizontal_slider_2" style="left: 5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'top_right'"; echo ');">
+			&nbsp;
+		</div>
+	</div>
+
+
+
+<div class="flap">Bottom Left <div class="display_holder" id="display_holder_3" >
+		<!-- Default value: 40 -->
+		<input type="text" class="value_display" id="bottom_left" value="5" onfocus="blur(this);" />
+	</div></div>	<!-- Value display 3 (red)	-->
+
+	<!-- Horizontal slider 3 (red) -->
+	<div class="horizontal_track" id="horizontal_track_3" >
+		<div class="horizontal_slit" id="horizontal_slit_3" >&nbsp;</div>
+		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
+			Default position: 40 pixels, Connected to value_display_3 -->
+		<div class="horizontal_slider" id="horizontal_slider_3" style="left: 5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'bottom_left'";echo ');">&nbsp;</div>
+	</div>
+
+<div class="flap">Bottom Right	<div class="display_holder" id="display_holder_5" >
+		<!-- Default value: 40 -->
+		<input type="text" class="value_display" id="bottom_right" value="5" onfocus="blur(this);" />
+	</div></div>	<!-- Value display 5 (red)	-->
+
+	<!-- Horizontal slider 5 (red) -->
+	<div class="horizontal_track" id="horizontal_track_5" >
+		<div class="horizontal_slit" id="horizontal_slit_5" >&nbsp;</div>
+		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
+			Default position: 40 pixels, Connected to value_display_3 -->
+		<div class="horizontal_slider" id="horizontal_slider_5" style="left: 5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'bottom_right'";echo ');">&nbsp;</div>
+	</div>
+
+         </form>
+
+<div id="temple3" style="float:right;"><br>Your Text! :D<br></div>
+    <div id="out2" style="margin-top:-100px;margin-left:5px;float:right;">
+
+
+    </div>
+</body>
+</div>
+
+
+';
+
+
+
+
+echo '
+
+</td>
+</tr>
+
+<tr>
+<td>
+[box_shadow]
+</td>
+<td>
+<div id="client2">
+';echo "
+
+<style>
+
+
+#temple1 {
+
+background: rgb(210,255,82); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(210,255,82,1)), color-stop(100%,rgba(145,232,66,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=0 ); /* IE6-9 */
+
+height:100px;
+width:100px;
+font-size:10px;
+}
+
+</style>
+
+";echo'
+
+
+<script type="text/javascript">';
+echo "	    function test(){
+
+			var hl = document.getElementById('horizontal_length').value;
+			var vl = document.getElementById('vertical_length').value;
+			var br = document.getElementById('blur_radius').value;
+			var sp = document.getElementById('spread').value;";
+
+
+			echo "document.getElementById('out').innerHTML =";
+
+
+echo ' "<style>#temple1" + "{" + "font-size:40pt;box-shadow:" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "-webkit-box-shadow:" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + + sp + "px;" + "-moz-box-shadow" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "}</style>" + "<div id=';echo "''>";echo '</div>" + "';
+
+echo "<textarea style='height:100px;width:100px;'";
+
+echo '>" + "/*style*/" + "&#013" + "box-shadow: " + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "&#013" + "-webkit-box-shadow: " + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "&#013" + "-moz-box-shadow: " + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "</textarea>" + "<div id=';
+echo "''>"; echo '</div>";';
+echo "
+			document.getElementById('out').style.display ="; echo ' "block";';
+
+echo '			return false;
+		}
+	</script>
+</head>
+
+<body>
+    <form action="" style="float:left;height:100%;width:100px;" onsubmit="return test()">
+
+<div class="flap">Horizontal Length:</div>	<!-- Value display 1 (green) -->
+	<div class="display_holder" id="display_holder_11" >
+		<!-- Default value: 80 -->
+		<input type="text" class="value_display" id="horizontal_length" value="5" onfocus="blur(this);" />
+	</div>	<!-- Horizontal slider 1 (green) -->
+	<div class="horizontal_track" id="horizontal_track_11" >
+		<div class="horizontal_slit" id="horizontal_slit_11" >&nbsp;</div>
+		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
+			default position: 80 pixels, connected to value_display_1 -->
+		<div onchange="return test5()" class="horizontal_slider" id="horizontal_slider_11" style="left: 5px;"
+			onmousedown="'; echo "slide(event, 'horizontal', 75, 0, 100, 101, 0, 'horizontal_length'"; echo ');" >&nbsp;</div>
+
+
+	</div>
+
+
+<div class="flap">Vertical Length:</div>	<!-- Value display 2 (blue)	-->
+	<div class="display_holder" id="display_holder_21" >
+		<!-- Default value: 35 -->
+		<input type="text" class="value_display" id="vertical_length" value="5" onfocus="blur(this);" />
+	</div>	<!-- Horizontal slider 2 (blue) -->
+	<div class="horizontal_track" id="horizontal_track_21" >
+		<div class="horizontal_slit" id="horizontal_slit_21" >&nbsp;</div>
+		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
+			default position: 35 pixels, connected to value_display_2 -->
+		<div class="horizontal_slider" id="horizontal_slider_21" style="left: 5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'vertical_length'"; echo ');">
+			&nbsp;
+		</div>
+	</div>
+
+
+<div class="flap">Blur</div>	<!-- Value display 3 (red)	-->
+	<div class="display_holder" id="display_holder_31" >
+		<!-- Default value: 40 -->
+		<input type="text" class="value_display" id="blur_radius" value="5" onfocus="blur(this);" />
+	</div>
+	<!-- Horizontal slider 3 (red) -->
+	<div class="horizontal_track" id="horizontal_track_31" >
+		<div class="horizontal_slit" id="horizontal_slit_31" >&nbsp;</div>
+		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
+			Default position: 40 pixels, Connected to value_display_3 -->
+		<div class="horizontal_slider" id="horizontal_slider_31" style="left: 5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'blur_radius'";echo ');">&nbsp;</div>
+	</div>
+
+<div class="flap">Spread</div>	<!-- Value display 5 (red)	-->
+	<div class="display_holder" id="display_holder_51" >
+		<!-- Default value: 40 -->
+		<input type="text" class="value_display" id="spread" value="5" onfocus="blur(this);" />
+	</div>
+	<!-- Horizontal slider 5 (red) -->
+	<div class="horizontal_track" id="horizontal_track_51" >
+		<div class="horizontal_slit" id="horizontal_slit_51" >&nbsp;</div>
+		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
+			Default position: 40 pixels, Connected to value_display_3 -->
+		<div class="horizontal_slider" id="horizontal_slider_51" style="left: 5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'spread'";echo ');">&nbsp;</div>
+	</div>
+    </form>
+
+
+<div id="temple1" style="float:right;"></div>
+    <div id="out" style="margin-top:-75px;margin-left:5px;float:right;" >
+    </div>
+</body>
+</div>
+
+
+
+</td>
+</tr>
+
+
+
+</table>
+';
+
+echo "
+<script>
+function updateInfo(color) {
+	document.getElementById('info-r').value = color.rgb[0]*100 + '%';;
+	document.getElementById('info-g').value = color.rgb[1]*100 + '%';;
+	document.getElementById('info-b').value = color.rgb[2]*100 + '%';;
+}
+</script>
+
+<script>
+
+//---------------------------------+
+//  CARPE  S l i d e r        1.3  |
+//  2005 - 12 - 10                 |
+//  By Tom Hermansson Snickars     |
+//  Copyright CARPE Design         |
+//  http://carpe.ambiprospect.com/ |
+//---------------------------------+
+
+// carpeGetElementByID: Cross-browser version of document.getElementById()
+function carpeGetElementById(element)
+{
+	if (document.getElementById) element = document.getElementById(element);
+	else if (document.all) element = document.all[element];
+	else element = null;
+	return element;
+}
+// carpeLeft: Cross-browser version of element.style.left
+function carpeLeft(elmnt, pos)
+{
+	if (!(elmnt = carpeGetElementById(elmnt))) return 0;
+	if (elmnt.style && (typeof(elmnt.style.left) == 'string')) {
+		if (typeof(pos) == 'number') elmnt.style.left = pos + 'px';
+		else {
+			pos = parseInt(elmnt.style.left);
+			if (isNaN(pos)) pos = 0;
+		}
+	}
+	else if (elmnt.style && elmnt.style.pixelLeft) {
+		if (typeof(pos) == 'number') elmnt.style.pixelLeft = pos;
+		else pos = elmnt.style.pixelLeft;
+	}
+	return pos;
+}
+// carpeTop: Cross-browser version of element.style.top
+function carpeTop(elmnt, pos)
+{
+	if (!(elmnt = carpeGetElementById(elmnt))) return 0;
+	if (elmnt.style && (typeof(elmnt.style.top) == 'string')) {
+		if (typeof(pos) == 'number') elmnt.style.top = pos + 'px';
+		else {
+			pos = parseInt(elmnt.style.top);
+			if (isNaN(pos)) pos = 0;
+		}
+	}
+	else if (elmnt.style && elmnt.style.pixelTop) {
+		if (typeof(pos) == 'number') elmnt.style.pixelTop = pos;
+		else pos = elmnt.style.pixelTop;
+	}
+	return pos;
+}
+// moveSlider: Handles slider and display while dragging
+function moveSlider(evnt)
+{
+	var evnt = (!evnt) ? window.event : evnt; // The mousemove event
+	if (mouseover) { // Only if slider is dragged
+		x = pxLeft + evnt.screenX - xCoord // Horizontal mouse position relative to allowed slider positions
+		y = pxTop + evnt.screenY - yCoord // Horizontal mouse position relative to allowed slider positions
+		if (x > xMax) x = xMax // Limit horizontal movement
+		if (x < 0) x = 0 // Limit horizontal movement
+		if (y > yMax) y = yMax // Limit vertical movement
+		if (y < 0) y = 0 // Limit vertical movement
+		carpeLeft(sliderObj.id, x)  // move slider to new horizontal position
+		carpeTop(sliderObj.id, y) // move slider to new vertical position
+		sliderVal = x + y // pixel value of slider regardless of orientation
+		sliderPos = (sliderObj.pxLen / sliderObj.valCount) * Math.round(sliderObj.valCount * sliderVal / sliderObj.pxLen)
+		v = Math.round((sliderPos * sliderObj.scale + sliderObj.fromVal) * // calculate display value
+			Math.pow(10, displayObj.dec)) / Math.pow(10, displayObj.dec)
+		displayObj.value = v // put the new value in the slider display element
+	test2();
+	test();
+		return false
+	}
+	return
+}
+// moveSlider: Handles the start of a slider move.
+function slide(evnt, orientation, length, from, to, count, decimals, display)
+{
+	if (!evnt) evnt = window.event;
+	sliderObj = (evnt.target) ? evnt.target : evnt.srcElement; // Get the activated slider element.
+	sliderObj.pxLen = length // The allowed slider movement in pixels.
+
+	sliderObj.valCount = count ? count - 1 : length // Allowed number of values in the interval.
+	displayObj = carpeGetElementById(display) // Get the associated display element.
+
+	displayObj.dec = decimals // Number of decimals to be displayed.
+
+	sliderObj.scale = (to - from) / length // Slider-display scale [value-change per pixel of movement].
+
+	if (orientation == 'horizontal') { // Set limits for horizontal sliders.
+		sliderObj.fromVal = from
+		xMax = length
+		yMax = 0
+	}
+	if (orientation == 'vertical') { // Set limits and scale for vertical sliders.
+		sliderObj.fromVal = to
+		xMax = 0
+		yMax = length
+		sliderObj.scale = -sliderObj.scale // Invert scale for vertical sliders. Higher is more.
+	}
+	pxLeft = carpeLeft(sliderObj.id) // Sliders horizontal position at start of slide.
+	pxTop  = carpeTop(sliderObj.id) // Sliders vertical position at start of slide.
+	xCoord = evnt.screenX // Horizontal mouse position at start of slide.
+	yCoord = evnt.screenY // Vertical mouse position at start of slide.
+	mouseover = true
+	document.onmousemove = moveSlider // Start the action if the mouse is dragged.
+	document.onmouseup = sliderMouseUp // Stop sliding.
+}
+// sliderMouseup: Handles the mouseup event after moving a slider.
+// Snaps the slider position to allowed/displayed value. 
+function sliderMouseUp()
+{
+	mouseover = false // Stop the sliding.
+	v = (displayObj.value) ? displayObj.value : 0 // Find last display value.
+	pos = (v - sliderObj.fromVal)/(sliderObj.scale) // Calculate slider position (regardless of orientation).
+
+
+	if (yMax == 0) carpeLeft(sliderObj.id, pos) // Snap horizontal slider to corresponding display position.
+	if (xMax == 0) carpeTop(sliderObj.id, pos) // Snap vertical slider to corresponding display position.
+	if (document.removeEventListener) { // Remove event listeners from 'document' (Moz&co).
+		document.removeEventListener('mousemove', moveSlider)
+		document.removeEventListener('mouseup', sliderMouseUp)
+	}
+	else if (document.detachEvent) { // Remove event listeners from 'document' (IE&co).
+		document.detachEvent('onmousemove', moveSlider)
+		document.detachEvent('onmouseup', sliderMouseUp)
+	}
+}
+
+</script>
+
+
+
+";
+echo '
+
+
+
+</div>
+
+<div id="myDiv3" style="display:none;">
+</div>
+
+
+
+
+</div></center></div>
+
+
+
 
 
 ';
@@ -2498,7 +4113,7 @@ if($_POST['subject']){
  $subject = $_POST['subject'];
  $from = $_POST['email'];
  $message = $_POST['message'];
- $message = "Name : ".$_POST['name']."\nSite: ".$_POST['site']."\nEmail : ".$from."\nMessage : ".$message;
+ $message = "Name : ".$_POST['name']."\nEmail : ".$from."\n\nSubject: ".$_POST['subject']."\n\nMessage : ".$message;
  $headers = "From:" . $from;
  mail($to,$subject,$message,$headers);
 
@@ -2583,6 +4198,7 @@ echo '<center><form name="client">
 </form></center>';
 
 echo '<style>
+
 
 #header-text
 
@@ -4494,8 +6110,7 @@ echo '			return false;
 			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 500, 101, 0, 'the_second_color_number3'"; echo ');">
 			&nbsp;
 		</div>
-	</div>
-
+</div>
 </div>
 
 <div class="flap">Color</div>
@@ -4772,6 +6387,1418 @@ echo'</div>
  
 }
 add_action( 'widgets_init', create_function('', 'return register_widget("RandomPostWidget");') );
+
+
+
+
+//[foobar]
+function lradius( $atts ){
+ echo '
+
+
+<style>
+
+
+#main-body
+
+{
+
+width:200px;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+'; echo "
+
+
+
+padding:1px;
+
+
+
+
+/*style*/
+
+border-top-left-radius:9px;
+border-top-right-radius:9px;
+border-bottom-right-radius:9px;
+border-bottom-left-radius:9px;
+
+-moz-border-top-left-radius:9px;
+-moz-border-top-right-radius:9px;
+-moz-border-bottom-right-radius:9px;
+-moz-border-bottom-left-radius:9px;
+
+-webkit-border-top-left-radius:9px;
+-webkit-border-top-right-radius:9px;
+-webkit-border-bottom-right-radius:9px;
+-webkit-border-bottom-left-radius:9px;
+
+
+";
+echo '
+';echo " 
+}
+
+
+
+#temple3 {
+
+background: rgb(210,255,82); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(210,255,82,1)), color-stop(100%,rgba(145,232,66,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=0 ); /* IE6-9 */
+height:100px;
+width:100px;
+font-size:10px;
+
+}
+
+
+
+";echo '
+
+
+h2
+{
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+font-weight:100;
+}
+
+
+#client5
+
+{height:200px;width:200px;}
+
+#client4
+
+{height:200px;width:200px;}
+
+#client3
+
+{height:200px;width:200px;}
+
+#idone
+
+{height:200px;width:200px;}
+
+#client2
+
+{height:200px;width:200px;}
+
+#client1
+
+{height:200px;width:200px;}
+
+
+#help
+
+{height:200px;width:200px;}
+
+#yay1 select 
+
+{
+
+
+}
+
+
+#idone input, #contact-area textarea {
+	padding: 5px;
+	width: 200px;
+	font-family: Helvetica, sans-serif;
+	font-size: 1.4em;
+	margin: 0px 0px 10px 0px;
+	border: 2px solid #ccc;
+}
+
+#idone textarea {
+	height:179px;width:320px;border: 2px solid #ccc;
+}
+
+#idone textarea:focus, #contact-area input:focus {
+	border: 2px solid #900;
+}
+
+#idone input.submit-button {
+	width: 100px;
+	float: right;
+}
+
+#idone label {
+	float: left;
+	text-align: left;
+	width: 100px;
+	padding-top: 5px;
+	font-size: 1.0em;
+	margin-left:50px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+font-weight:200;
+}
+
+#x {
+	background-color: #bdb;
+	color: #363;
+	}
+
+
+
+#y {
+	background-color: #bcd;
+	color: #258;
+	}
+
+
+#blur {
+	background-color: #dbb;
+	color: #933;
+	}
+
+
+
+#horizontal_length {
+	background-color: #bdb;
+	color: #363;
+	}
+
+#vertical_length {
+	background-color: #bcd;
+	color: #258;
+	}
+
+#blur_radius {
+	background-color: #dbb;
+	color: #933;
+	}
+
+#spread {
+	background-color: #d9bbdb;
+	color: #8d3393;
+	}
+
+
+#top_left {
+	background-color: #bdb;
+	color: #363;
+	}
+
+#top_right {
+	background-color: #bcd;
+	color: #258;
+	}
+
+#bottom_left {
+	background-color: #dbb;
+	color: #933;
+	}
+
+#bottom_right {
+	background-color: #d9bbdb;
+	color: #8d3393;
+	}
+
+#skew_x {
+	background-color: #bdb;
+	color: #363;
+	}
+
+#skew_y {
+	background-color: #ddddbc;
+	color: #888525;
+	}
+
+#scale {
+	background-color: #bdb;
+	color: #363;
+	}
+
+#rotate {
+	background-color: #bcd;
+	color: #258;
+	}
+
+#translate_x {
+	background-color: #dbb;
+	color: #933;
+	}
+
+#translate_y {
+	background-color: #d9bbdb;
+	color: #8d3393;
+	}
+
+
+#the_first_color_number {
+	background-color: #ffffff;
+	}
+
+#the_second_color_number {
+	background-color: #91e842;
+	}
+
+
+
+
+
+#the_first_color_number2 {
+	background-color: #ffffff;
+	}
+
+#the_second_color_number2 {
+	background-color: #61A0E8;
+	}
+
+
+
+#the_first_color_number3 {
+	background-color: #ffffff;
+	}
+
+#the_second_color_number3 {
+	background-color: #E86DA2;
+	}
+
+
+.flap {
+width:100px;
+font-size:10px;
+}
+
+
+
+
+
+
+*.horizontal_track {
+	background-color: #bbb;
+	width: 90px;
+	line-height: 0px;
+	font-size: 0px;
+	text-align: left;
+	padding: 4px;
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+}
+*.horizontal_slider {
+	background-color: #666;
+	width: 10px;
+	height: 10px;
+	position: relative;
+	z-index: 2;
+	line-height: 0;
+	margin: 0;
+	border: 2px solid;
+	border-color: #999 #333 #333 #999;
+}
+*.horizontal_slit {
+	background-color: #333;
+	width: 80px;
+	height: 5px;
+	margin: 4px 4px 2px 4px;
+	line-height: 0;
+	position: absolute;
+	z-index: 1;
+	border: 1px solid;
+	border-color: #999 #ddd #ddd #999;
+}
+*.vertical_track {
+	background-color: #bbb;
+	padding: 3px 5px 15px 5px;
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+}
+*.vertical_slider {
+	background-color: #666;
+	width: 18px;
+	height: 8px;
+	font: 0px;
+	text-align: left;
+	line-height: 0px;
+	position: relative;
+	z-index: 1;
+	border: 2px solid;
+	border-color: #999 #333 #333 #999;
+}
+*.vertical_slit {
+	background-color: #000;
+	width: 2px;
+	height: 100px;
+	position: absolute;
+	margin: 4px 10px 4px 10px;
+	padding: 4px 0 1px 0;
+	line-height: 0;
+	font-size: 0;
+	border: 1px solid;
+	border-color: #666 #ccc #ccc #666;
+}
+*.display_holder {
+	display:none;
+	margin-top:0px;
+	float:right;
+	background-color: #bbb;
+	color: #fff;
+	width: 25px;
+	text-align: right;
+	padding: 0;
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+}
+.value_display {
+
+	background-color: #bbb;
+	color: #333;
+	width: 20px;
+	margin: 0 2px;
+	text-align: right;
+	font-size: 10pt;
+	font-face: verdana, arial, helvetica, sans-serif;
+	font-weight: bold;
+	line-height: 12px;
+	border: 0;
+	cursor: default;
+}
+
+
+
+
+#horizontal_slider_7 {
+	background-color: #ffffff;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_track_7, #display_holder_7 {
+	background-color: #dbdbdb;
+	border-color: #e2e2e2 #bababa #bababa #e2e2e2;
+	}
+#horizontal_slit_7 {
+	background-color: #fff;
+	border-color: #bababa #e2e2e2 #e2e2e2 #bababa;
+	}
+#value_display_7 {
+	background-color: #d9bbdb;
+	color: #bababa;
+	}
+
+
+
+
+
+#horizontal_slider_1 {
+	background-color: #696;
+	border-color: #9c9 #363 #363 #9c9;
+	}
+#horizontal_track_1, #display_holder_1 {
+	background-color: #bdb;
+	border-color: #ded #9a9 #9a9 #ded;
+	}
+#horizontal_slit_1 {
+	background-color: #fff;
+	border-color: #9a9 #ded #ded #9a9;
+	}
+#value_display_1 {
+	background-color: #bdb;
+	color: #363;
+	}
+#horizontal_slider_2 {
+	background-color: #369;
+	border-color: #69c #036 #036 #69c;
+	}
+#horizontal_track_2, #display_holder_2 {
+	background-color: #bcd;
+	border-color: #def #9ab #9ab #def;
+	}
+#horizontal_slit_2 {
+	background-color: #fff;
+	border-color: #9ab #def #def #9ab;
+	}
+#value_display_2 {
+	background-color: #bcd;
+	color: #258;
+	}
+#horizontal_slider_3 {
+	background-color: #c33;
+	border-color: #f66 #933 #933 #f66;
+	}
+#horizontal_track_3, #display_holder_3 {
+	background-color: #dbb;
+	border-color: #fdd #b99 #b99 #fdd;
+	}
+#horizontal_slit_3 {
+	background-color: #fff;
+	border-color: #b99 #fdd #fdd #b99;
+	}
+#value_display_3 {
+	background-color: #dbb;
+	color: #933;
+	}
+#horizontal_slider_5 {
+	background-color: #9233c3;
+	border-color: #bb66f1 #8d3393 #8d3393 #bb66f1;
+	}
+#horizontal_track_5, #display_holder_5 {
+	background-color: #d9bbdb;
+	border-color: #fcddfd #b699b9 #b699b9 #fcddfd;
+	}
+#horizontal_slit_5 {
+	background-color: #fff;
+	border-color: #b699b9 #fcddfd #fcddfd #b699b9;
+	}
+#value_display_5 {
+	background-color: #d9bbdb;
+	color: #8d3393;
+	}
+
+	
+
+</style>
+
+<div id="client1"><script type="text/javascript">';
+echo "	    function test2(){
+
+			var tl = document.getElementById('top_left').value;
+			var tr = document.getElementById('top_right').value;
+			var bl = document.getElementById('bottom_left').value;
+			var br = document.getElementById('bottom_right').value;
+";
+
+
+			echo "document.getElementById('out2').innerHTML =";
+
+
+echo ' "<style>#temple3" + "{" + "border-top-left-radius:" + tl + "px;border-top-right-radius:" + tr + "px;border-bottom-right-radius:" + br + "px;border-bottom-left-radius:" + bl + "px;-moz-border-top-left-radius:" + tl + "px;-moz-border-top-right-radius:" + tr + "px;-moz-border-bottom-right-radius:" + br + "px;-moz-border-bottom-left-radius:" + bl + "px;-webkit-border-top-left-radius:" + tl + "px;-webkit-border-top-right-radius:" + tr + "px;-webkit-border-bottom-right-radius:" + br + "px;-webkit-border-bottom-left-radius:" + bl + "px;" + "}" + "</style>" + "" + "';
+
+echo "<textarea style='height:100px;width:100px;float:right;'";
+
+echo '>" + "/*style*/" + "&#013;" + "&#013;" + "border-top-left-radius:" + tl + "px;" + "&#013;" + "border-top-right-radius:" + tr + "px;" + "&#013;" + "border-bottom-right-radius:" + br + "px;" + "&#013;" + "border-bottom-left-radius:" + bl + "px;" + "&#013;" + "&#013;" + "-moz-border-top-left-radius:" + tl + "px;" + "&#013;" + "-moz-border-top-right-radius:" + tr + "px;" + "&#013;" + "-moz-border-bottom-right-radius:" + br + "px;" + "&#013;" + "-moz-border-bottom-left-radius:" + bl + "px;" + "&#013;" + "&#013;" + "-webkit-border-top-left-radius:" + tl + "px;" + "&#013;" + "-webkit-border-top-right-radius:" + tr + "px;" + "&#013;" + "-webkit-border-bottom-right-radius:" + br + "px;" + "&#013;" + "-webkit-border-bottom-left-radius:" + bl + "px;" + "</textarea>" + "<div id=';
+echo "''>"; echo '</div>";';
+echo "
+			document.getElementById('out2').style.display ="; echo ' "block";';
+
+echo '			return false;
+		}
+	</script>
+
+	<script type="text/javascript" src="/wp-content/plugins/lw-website-tools/js/jscolor.js"></script>
+
+</head>
+
+<body>
+    <form style="float:left;height:100%;width:100px;" action="" onsubmit="return test2()">
+
+
+
+<div class="flap">Top Left	<div class="display_holder" id="display_holder_1" >
+		<!-- Default value: 80 -->
+		<input type="text" class="value_display" id="top_left" value="5" onfocus="blur(this);" />
+	</div>	</div>	<!-- Value display 1 (green) -->
+<!-- Horizontal slider 1 (green) -->
+	<div class="horizontal_track" id="horizontal_track_1" >
+		<div class="horizontal_slit" id="horizontal_slit_1" >&nbsp;</div>
+		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
+			default position: 80 pixels, connected to value_display_1 -->
+		<div class="horizontal_slider" id="horizontal_slider_1" style="left: 5px;"
+			onmousedown="'; echo "slide(event, 'horizontal', 75, 0, 100, 101, 0, 'top_left'"; echo ');myFunction();" >&nbsp;</div>
+
+
+	</div>
+
+
+<div class="flap">Top Right<!-- Value display 2 (blue)	-->
+	<div class="display_holder" id="display_holder_2" >
+		<!-- Default value: 35 -->
+		<input type="text" class="value_display" id="top_right" value="5" onfocus="blur(this);" />
+	</div></div>		<!-- Horizontal slider 2 (blue) -->
+	<div class="horizontal_track" id="horizontal_track_2" >
+		<div class="horizontal_slit" id="horizontal_slit_2" >&nbsp;</div>
+		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
+			default position: 35 pixels, connected to value_display_2 -->
+		<div class="horizontal_slider" id="horizontal_slider_2" style="left: 5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'top_right'"; echo ');">
+			&nbsp;
+		</div>
+	</div>
+
+
+
+<div class="flap">Bottom Left <div class="display_holder" id="display_holder_3" >
+		<!-- Default value: 40 -->
+		<input type="text" class="value_display" id="bottom_left" value="5" onfocus="blur(this);" />
+	</div></div>	<!-- Value display 3 (red)	-->
+
+	<!-- Horizontal slider 3 (red) -->
+	<div class="horizontal_track" id="horizontal_track_3" >
+		<div class="horizontal_slit" id="horizontal_slit_3" >&nbsp;</div>
+		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
+			Default position: 40 pixels, Connected to value_display_3 -->
+		<div class="horizontal_slider" id="horizontal_slider_3" style="left: 5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'bottom_left'";echo ');">&nbsp;</div>
+	</div>
+
+<div class="flap">Bottom Right	<div class="display_holder" id="display_holder_5" >
+		<!-- Default value: 40 -->
+		<input type="text" class="value_display" id="bottom_right" value="5" onfocus="blur(this);" />
+	</div></div>	<!-- Value display 5 (red)	-->
+
+	<!-- Horizontal slider 5 (red) -->
+	<div class="horizontal_track" id="horizontal_track_5" >
+		<div class="horizontal_slit" id="horizontal_slit_5" >&nbsp;</div>
+		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
+			Default position: 40 pixels, Connected to value_display_3 -->
+		<div class="horizontal_slider" id="horizontal_slider_5" style="left: 5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'bottom_right'";echo ');">&nbsp;</div>
+	</div>
+
+         </form>
+
+<div id="temple3" style="float:right;"><br>Your Text! :D<br></div>
+    <div id="out2" style="margin-top:-100px;margin-left:5px;float:right;">
+
+
+    </div>
+</body>
+</div>
+
+
+';
+echo "
+<script>
+function updateInfo(color) {
+	document.getElementById('info-r').value = color.rgb[0]*100 + '%';;
+	document.getElementById('info-g').value = color.rgb[1]*100 + '%';;
+	document.getElementById('info-b').value = color.rgb[2]*100 + '%';;
+}
+</script>
+
+<script>
+
+//---------------------------------+
+//  CARPE  S l i d e r        1.3  |
+//  2005 - 12 - 10                 |
+//  By Tom Hermansson Snickars     |
+//  Copyright CARPE Design         |
+//  http://carpe.ambiprospect.com/ |
+//---------------------------------+
+
+// carpeGetElementByID: Cross-browser version of document.getElementById()
+function carpeGetElementById(element)
+{
+	if (document.getElementById) element = document.getElementById(element);
+	else if (document.all) element = document.all[element];
+	else element = null;
+	return element;
+}
+// carpeLeft: Cross-browser version of element.style.left
+function carpeLeft(elmnt, pos)
+{
+	if (!(elmnt = carpeGetElementById(elmnt))) return 0;
+	if (elmnt.style && (typeof(elmnt.style.left) == 'string')) {
+		if (typeof(pos) == 'number') elmnt.style.left = pos + 'px';
+		else {
+			pos = parseInt(elmnt.style.left);
+			if (isNaN(pos)) pos = 0;
+		}
+	}
+	else if (elmnt.style && elmnt.style.pixelLeft) {
+		if (typeof(pos) == 'number') elmnt.style.pixelLeft = pos;
+		else pos = elmnt.style.pixelLeft;
+	}
+	return pos;
+}
+// carpeTop: Cross-browser version of element.style.top
+function carpeTop(elmnt, pos)
+{
+	if (!(elmnt = carpeGetElementById(elmnt))) return 0;
+	if (elmnt.style && (typeof(elmnt.style.top) == 'string')) {
+		if (typeof(pos) == 'number') elmnt.style.top = pos + 'px';
+		else {
+			pos = parseInt(elmnt.style.top);
+			if (isNaN(pos)) pos = 0;
+		}
+	}
+	else if (elmnt.style && elmnt.style.pixelTop) {
+		if (typeof(pos) == 'number') elmnt.style.pixelTop = pos;
+		else pos = elmnt.style.pixelTop;
+	}
+	return pos;
+}
+// moveSlider: Handles slider and display while dragging
+function moveSlider(evnt)
+{
+	var evnt = (!evnt) ? window.event : evnt; // The mousemove event
+	if (mouseover) { // Only if slider is dragged
+		x = pxLeft + evnt.screenX - xCoord // Horizontal mouse position relative to allowed slider positions
+		y = pxTop + evnt.screenY - yCoord // Horizontal mouse position relative to allowed slider positions
+		if (x > xMax) x = xMax // Limit horizontal movement
+		if (x < 0) x = 0 // Limit horizontal movement
+		if (y > yMax) y = yMax // Limit vertical movement
+		if (y < 0) y = 0 // Limit vertical movement
+		carpeLeft(sliderObj.id, x)  // move slider to new horizontal position
+		carpeTop(sliderObj.id, y) // move slider to new vertical position
+		sliderVal = x + y // pixel value of slider regardless of orientation
+		sliderPos = (sliderObj.pxLen / sliderObj.valCount) * Math.round(sliderObj.valCount * sliderVal / sliderObj.pxLen)
+		v = Math.round((sliderPos * sliderObj.scale + sliderObj.fromVal) * // calculate display value
+			Math.pow(10, displayObj.dec)) / Math.pow(10, displayObj.dec)
+		displayObj.value = v // put the new value in the slider display element
+	test2();
+		return false
+	}
+	return
+}
+// moveSlider: Handles the start of a slider move.
+function slide(evnt, orientation, length, from, to, count, decimals, display)
+{
+	if (!evnt) evnt = window.event;
+	sliderObj = (evnt.target) ? evnt.target : evnt.srcElement; // Get the activated slider element.
+	sliderObj.pxLen = length // The allowed slider movement in pixels.
+
+	sliderObj.valCount = count ? count - 1 : length // Allowed number of values in the interval.
+	displayObj = carpeGetElementById(display) // Get the associated display element.
+
+	displayObj.dec = decimals // Number of decimals to be displayed.
+
+	sliderObj.scale = (to - from) / length // Slider-display scale [value-change per pixel of movement].
+
+	if (orientation == 'horizontal') { // Set limits for horizontal sliders.
+		sliderObj.fromVal = from
+		xMax = length
+		yMax = 0
+	}
+	if (orientation == 'vertical') { // Set limits and scale for vertical sliders.
+		sliderObj.fromVal = to
+		xMax = 0
+		yMax = length
+		sliderObj.scale = -sliderObj.scale // Invert scale for vertical sliders. Higher is more.
+	}
+	pxLeft = carpeLeft(sliderObj.id) // Sliders horizontal position at start of slide.
+	pxTop  = carpeTop(sliderObj.id) // Sliders vertical position at start of slide.
+	xCoord = evnt.screenX // Horizontal mouse position at start of slide.
+	yCoord = evnt.screenY // Vertical mouse position at start of slide.
+	mouseover = true
+	document.onmousemove = moveSlider // Start the action if the mouse is dragged.
+	document.onmouseup = sliderMouseUp // Stop sliding.
+}
+// sliderMouseup: Handles the mouseup event after moving a slider.
+// Snaps the slider position to allowed/displayed value. 
+function sliderMouseUp()
+{
+	mouseover = false // Stop the sliding.
+	v = (displayObj.value) ? displayObj.value : 0 // Find last display value.
+	pos = (v - sliderObj.fromVal)/(sliderObj.scale) // Calculate slider position (regardless of orientation).
+
+
+	if (yMax == 0) carpeLeft(sliderObj.id, pos) // Snap horizontal slider to corresponding display position.
+	if (xMax == 0) carpeTop(sliderObj.id, pos) // Snap vertical slider to corresponding display position.
+	if (document.removeEventListener) { // Remove event listeners from 'document' (Moz&co).
+		document.removeEventListener('mousemove', moveSlider)
+		document.removeEventListener('mouseup', sliderMouseUp)
+	}
+	else if (document.detachEvent) { // Remove event listeners from 'document' (IE&co).
+		document.detachEvent('onmousemove', moveSlider)
+		document.detachEvent('onmouseup', sliderMouseUp)
+	}
+}
+
+</script>
+
+
+
+";
+
+
+
+
+
+}
+add_shortcode( 'lradius_tool', 'lradius' );
+
+
+
+
+
+
+
+
+//[foobar]
+function lshadow( $atts ){
+ echo '
+
+
+<style>
+
+
+#main-body
+
+{
+
+width:200px;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+'; echo "
+
+
+
+padding:1px;
+
+
+
+
+/*style*/
+
+border-top-left-radius:9px;
+border-top-right-radius:9px;
+border-bottom-right-radius:9px;
+border-bottom-left-radius:9px;
+
+-moz-border-top-left-radius:9px;
+-moz-border-top-right-radius:9px;
+-moz-border-bottom-right-radius:9px;
+-moz-border-bottom-left-radius:9px;
+
+-webkit-border-top-left-radius:9px;
+-webkit-border-top-right-radius:9px;
+-webkit-border-bottom-right-radius:9px;
+-webkit-border-bottom-left-radius:9px;
+
+
+";
+echo '
+';echo " 
+}
+
+
+
+#temple1 {
+
+background: rgb(210,255,82); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(210,255,82,1)), color-stop(100%,rgba(145,232,66,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(210,255,82,1) 0%,rgba(145,232,66,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=0 ); /* IE6-9 */
+height:100px;
+width:100px;
+font-size:10px;
+
+}
+
+
+
+";echo '
+
+
+h2
+{
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+font-weight:100;
+}
+
+
+#client5
+
+{height:200px;width:200px;}
+
+#client4
+
+{height:200px;width:200px;}
+
+#client3
+
+{height:200px;width:200px;}
+
+#idone
+
+{height:200px;width:200px;}
+
+#client2
+
+{height:200px;width:200px;}
+
+#client1
+
+{height:200px;width:200px;}
+
+
+#help
+
+{height:200px;width:200px;}
+
+#yay1 select 
+
+{
+
+
+}
+
+
+#idone input, #contact-area textarea {
+	padding: 5px;
+	width: 200px;
+	font-family: Helvetica, sans-serif;
+	font-size: 1.4em;
+	margin: 0px 0px 10px 0px;
+	border: 2px solid #ccc;
+}
+
+#idone textarea {
+	height:179px;width:320px;border: 2px solid #ccc;
+}
+
+#idone textarea:focus, #contact-area input:focus {
+	border: 2px solid #900;
+}
+
+#idone input.submit-button {
+	width: 100px;
+	float: right;
+}
+
+#idone label {
+	float: left;
+	text-align: left;
+	width: 100px;
+	padding-top: 5px;
+	font-size: 1.0em;
+	margin-left:50px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+font-weight:200;
+}
+
+#x {
+	background-color: #bdb;
+	color: #363;
+	}
+
+
+
+#y {
+	background-color: #bcd;
+	color: #258;
+	}
+
+
+#blur {
+	background-color: #dbb;
+	color: #933;
+	}
+
+
+
+#horizontal_length {
+	background-color: #bdb;
+	color: #363;
+	}
+
+#vertical_length {
+	background-color: #bcd;
+	color: #258;
+	}
+
+#blur_radius {
+	background-color: #dbb;
+	color: #933;
+	}
+
+#spread {
+	background-color: #d9bbdb;
+	color: #8d3393;
+	}
+
+
+#top_left {
+	background-color: #bdb;
+	color: #363;
+	}
+
+#top_right {
+	background-color: #bcd;
+	color: #258;
+	}
+
+#bottom_left {
+	background-color: #dbb;
+	color: #933;
+	}
+
+#bottom_right {
+	background-color: #d9bbdb;
+	color: #8d3393;
+	}
+
+#skew_x {
+	background-color: #bdb;
+	color: #363;
+	}
+
+#skew_y {
+	background-color: #ddddbc;
+	color: #888525;
+	}
+
+#scale {
+	background-color: #bdb;
+	color: #363;
+	}
+
+#rotate {
+	background-color: #bcd;
+	color: #258;
+	}
+
+#translate_x {
+	background-color: #dbb;
+	color: #933;
+	}
+
+#translate_y {
+	background-color: #d9bbdb;
+	color: #8d3393;
+	}
+
+
+#the_first_color_number {
+	background-color: #ffffff;
+	}
+
+#the_second_color_number {
+	background-color: #91e842;
+	}
+
+
+
+
+
+#the_first_color_number2 {
+	background-color: #ffffff;
+	}
+
+#the_second_color_number2 {
+	background-color: #61A0E8;
+	}
+
+
+
+#the_first_color_number3 {
+	background-color: #ffffff;
+	}
+
+#the_second_color_number3 {
+	background-color: #E86DA2;
+	}
+
+
+.flap {
+width:100px;
+font-size:10px;
+}
+
+
+
+
+*.horizontal_track {
+	background-color: #bbb;
+	width: 90px;
+	line-height: 0px;
+	font-size: 0px;
+	text-align: left;
+	padding: 4px;
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+}
+*.horizontal_slider {
+	background-color: #666;
+	width: 10px;
+	height: 10px;
+	position: relative;
+	z-index: 2;
+	line-height: 0;
+	margin: 0;
+	border: 2px solid;
+	border-color: #999 #333 #333 #999;
+}
+*.horizontal_slit {
+	background-color: #333;
+	width: 80px;
+	height: 5px;
+	margin: 4px 4px 2px 4px;
+	line-height: 0;
+	position: absolute;
+	z-index: 1;
+	border: 1px solid;
+	border-color: #999 #ddd #ddd #999;
+}
+*.vertical_track {
+	background-color: #bbb;
+	padding: 3px 5px 15px 5px;
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+}
+*.display_holder {
+	display:none;
+	margin-top:0px;
+	float:right;
+	background-color: #bbb;
+	color: #fff;
+	width: 25px;
+	text-align: right;
+	padding: 0;
+	border: 1px solid;
+	border-color: #ddd #999 #999 #ddd;
+}
+.value_display {
+
+	background-color: #bbb;
+	color: #333;
+	width: 20px;
+	margin: 0 2px;
+	text-align: right;
+	font-size: 10pt;
+	font-face: verdana, arial, helvetica, sans-serif;
+	font-weight: bold;
+	line-height: 12px;
+	border: 0;
+	cursor: default;
+}
+
+
+	
+#horizontal_slider_51 {
+	background-color: #9233c3;
+	border-color: #bb66f1 #8d3393 #8d3393 #bb66f1;
+	}
+#horizontal_track_51, #display_holder_51 {
+	background-color: #d9bbdb;
+	border-color: #fcddfd #b699b9 #b699b9 #fcddfd;
+	}
+#horizontal_slit_51 {
+	background-color: #fff;
+	border-color: #b699b9 #fcddfd #fcddfd #b699b9;
+	}
+#value_display_51 {
+	background-color: #d9bbdb;
+	color: #8d3393;
+	}
+
+#horizontal_slider_11 {
+	background-color: #696;
+	border-color: #9c9 #363 #363 #9c9;
+	}
+#horizontal_track_11, #display_holder_11 {
+	background-color: #bdb;
+	border-color: #ded #9a9 #9a9 #ded;
+	}
+#horizontal_slit_11 {
+	background-color: #fff;
+	border-color: #9a9 #ded #ded #9a9;
+	}
+#value_display_11 {
+	background-color: #bdb;
+	color: #363;
+	}
+#horizontal_slider_21 {
+	background-color: #369;
+	border-color: #69c #036 #036 #69c;
+	}
+#horizontal_track_21, #display_holder_21 {
+	background-color: #bcd;
+	border-color: #def #9ab #9ab #def;
+	}
+#horizontal_slit_21 {
+	background-color: #fff;
+	border-color: #9ab #def #def #9ab;
+	}
+#value_display_21 {
+	background-color: #bcd;
+	color: #258;
+	}
+#horizontal_slider_31 {
+	background-color: #c33;
+	border-color: #f66 #933 #933 #f66;
+	}
+#horizontal_track_31, #display_holder_31 {
+	background-color: #dbb;
+	border-color: #fdd #b99 #b99 #fdd;
+	}
+#horizontal_slit_31 {
+	background-color: #fff;
+	border-color: #b99 #fdd #fdd #b99;
+	}
+#value_display_31 {
+	background-color: #dbb;
+	color: #933;
+	}
+
+
+
+
+
+
+	
+
+</style>
+
+<div id="client2">
+
+
+
+
+<script type="text/javascript">';
+echo "	    function test(){
+
+			var hl = document.getElementById('horizontal_length').value;
+			var vl = document.getElementById('vertical_length').value;
+			var br = document.getElementById('blur_radius').value;
+			var sp = document.getElementById('spread').value;";
+
+
+			echo "document.getElementById('out').innerHTML =";
+
+
+echo ' "<style>#temple1" + "{" + "font-size:40pt;box-shadow:" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "-webkit-box-shadow:" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + + sp + "px;" + "-moz-box-shadow" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "}</style>" + "<div id=';echo "''>";echo '</div>" + "';
+
+echo "<textarea style='height:100px;width:100px;'";
+
+echo '>" + "/*style*/" + "&#013" + "box-shadow: " + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "&#013" + "-webkit-box-shadow: " + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "&#013" + "-moz-box-shadow: " + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "</textarea>" + "<div id=';
+echo "''>"; echo '</div>";';
+echo "
+			document.getElementById('out').style.display ="; echo ' "block";';
+
+echo '			return false;
+		}
+	</script>
+</head>
+
+<body>
+    <form action="" style="float:left;height:100%;width:100px;" onsubmit="return test()">
+
+<div class="flap">Horizontal Length:</div>	<!-- Value display 1 (green) -->
+	<div class="display_holder" id="display_holder_11" >
+		<!-- Default value: 80 -->
+		<input type="text" class="value_display" id="horizontal_length" value="5" onfocus="blur(this);" />
+	</div>	<!-- Horizontal slider 1 (green) -->
+	<div class="horizontal_track" id="horizontal_track_11" >
+		<div class="horizontal_slit" id="horizontal_slit_11" >&nbsp;</div>
+		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
+			default position: 80 pixels, connected to value_display_1 -->
+		<div onchange="return test5()" class="horizontal_slider" id="horizontal_slider_11" style="left: 5px;"
+			onmousedown="'; echo "slide(event, 'horizontal', 75, 0, 100, 101, 0, 'horizontal_length'"; echo ');" >&nbsp;</div>
+
+
+	</div>
+
+
+<div class="flap">Vertical Length:</div>	<!-- Value display 2 (blue)	-->
+	<div class="display_holder" id="display_holder_21" >
+		<!-- Default value: 35 -->
+		<input type="text" class="value_display" id="vertical_length" value="5" onfocus="blur(this);" />
+	</div>	<!-- Horizontal slider 2 (blue) -->
+	<div class="horizontal_track" id="horizontal_track_21" >
+		<div class="horizontal_slit" id="horizontal_slit_21" >&nbsp;</div>
+		<!-- total movement: 100 pixels, scale: 1 [value/pixel],
+			default position: 35 pixels, connected to value_display_2 -->
+		<div class="horizontal_slider" id="horizontal_slider_21" style="left: 5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'vertical_length'"; echo ');">
+			&nbsp;
+		</div>
+	</div>
+
+
+<div class="flap">Blur</div>	<!-- Value display 3 (red)	-->
+	<div class="display_holder" id="display_holder_31" >
+		<!-- Default value: 40 -->
+		<input type="text" class="value_display" id="blur_radius" value="5" onfocus="blur(this);" />
+	</div>
+	<!-- Horizontal slider 3 (red) -->
+	<div class="horizontal_track" id="horizontal_track_31" >
+		<div class="horizontal_slit" id="horizontal_slit_31" >&nbsp;</div>
+		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
+			Default position: 40 pixels, Connected to value_display_3 -->
+		<div class="horizontal_slider" id="horizontal_slider_31" style="left: 5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'blur_radius'";echo ');">&nbsp;</div>
+	</div>
+
+<div class="flap">Spread</div>	<!-- Value display 5 (red)	-->
+	<div class="display_holder" id="display_holder_51" >
+		<!-- Default value: 40 -->
+		<input type="text" class="value_display" id="spread" value="5" onfocus="blur(this);" />
+	</div>
+	<!-- Horizontal slider 5 (red) -->
+	<div class="horizontal_track" id="horizontal_track_51" >
+		<div class="horizontal_slit" id="horizontal_slit_51" >&nbsp;</div>
+		<!-- Total movement: 100 pixels, Scale: 1 [value/pixel],
+			Default position: 40 pixels, Connected to value_display_3 -->
+		<div class="horizontal_slider" id="horizontal_slider_51" style="left: 5px;"
+			onmousedown="slide(event, ';echo "'horizontal', 75, 0, 100, 101, 0, 'spread'";echo ');">&nbsp;</div>
+	</div>
+    </form>
+
+
+<div id="temple1" style="float:right;"></div>
+    <div id="out" style="margin-top:-75px;margin-left:5px;float:right;" >
+    </div>
+</body>
+</div>
+
+
+
+
+
+
+
+
+';
+echo "
+<script>
+function updateInfo(color) {
+	document.getElementById('info-r').value = color.rgb[0]*100 + '%';;
+	document.getElementById('info-g').value = color.rgb[1]*100 + '%';;
+	document.getElementById('info-b').value = color.rgb[2]*100 + '%';;
+}
+</script>
+
+<script>
+
+//---------------------------------+
+//  CARPE  S l i d e r        1.3  |
+//  2005 - 12 - 10                 |
+//  By Tom Hermansson Snickars     |
+//  Copyright CARPE Design         |
+//  http://carpe.ambiprospect.com/ |
+//---------------------------------+
+
+// carpeGetElementByID: Cross-browser version of document.getElementById()
+function carpeGetElementById(element)
+{
+	if (document.getElementById) element = document.getElementById(element);
+	else if (document.all) element = document.all[element];
+	else element = null;
+	return element;
+}
+// carpeLeft: Cross-browser version of element.style.left
+function carpeLeft(elmnt, pos)
+{
+	if (!(elmnt = carpeGetElementById(elmnt))) return 0;
+	if (elmnt.style && (typeof(elmnt.style.left) == 'string')) {
+		if (typeof(pos) == 'number') elmnt.style.left = pos + 'px';
+		else {
+			pos = parseInt(elmnt.style.left);
+			if (isNaN(pos)) pos = 0;
+		}
+	}
+	else if (elmnt.style && elmnt.style.pixelLeft) {
+		if (typeof(pos) == 'number') elmnt.style.pixelLeft = pos;
+		else pos = elmnt.style.pixelLeft;
+	}
+	return pos;
+}
+// carpeTop: Cross-browser version of element.style.top
+function carpeTop(elmnt, pos)
+{
+	if (!(elmnt = carpeGetElementById(elmnt))) return 0;
+	if (elmnt.style && (typeof(elmnt.style.top) == 'string')) {
+		if (typeof(pos) == 'number') elmnt.style.top = pos + 'px';
+		else {
+			pos = parseInt(elmnt.style.top);
+			if (isNaN(pos)) pos = 0;
+		}
+	}
+	else if (elmnt.style && elmnt.style.pixelTop) {
+		if (typeof(pos) == 'number') elmnt.style.pixelTop = pos;
+		else pos = elmnt.style.pixelTop;
+	}
+	return pos;
+}
+// moveSlider: Handles slider and display while dragging
+function moveSlider(evnt)
+{
+	var evnt = (!evnt) ? window.event : evnt; // The mousemove event
+	if (mouseover) { // Only if slider is dragged
+		x = pxLeft + evnt.screenX - xCoord // Horizontal mouse position relative to allowed slider positions
+		y = pxTop + evnt.screenY - yCoord // Horizontal mouse position relative to allowed slider positions
+		if (x > xMax) x = xMax // Limit horizontal movement
+		if (x < 0) x = 0 // Limit horizontal movement
+		if (y > yMax) y = yMax // Limit vertical movement
+		if (y < 0) y = 0 // Limit vertical movement
+		carpeLeft(sliderObj.id, x)  // move slider to new horizontal position
+		carpeTop(sliderObj.id, y) // move slider to new vertical position
+		sliderVal = x + y // pixel value of slider regardless of orientation
+		sliderPos = (sliderObj.pxLen / sliderObj.valCount) * Math.round(sliderObj.valCount * sliderVal / sliderObj.pxLen)
+		v = Math.round((sliderPos * sliderObj.scale + sliderObj.fromVal) * // calculate display value
+			Math.pow(10, displayObj.dec)) / Math.pow(10, displayObj.dec)
+		displayObj.value = v // put the new value in the slider display element
+	test2();
+	test();
+		return false
+	}
+	return
+}
+// moveSlider: Handles the start of a slider move.
+function slide(evnt, orientation, length, from, to, count, decimals, display)
+{
+	if (!evnt) evnt = window.event;
+	sliderObj = (evnt.target) ? evnt.target : evnt.srcElement; // Get the activated slider element.
+	sliderObj.pxLen = length // The allowed slider movement in pixels.
+
+	sliderObj.valCount = count ? count - 1 : length // Allowed number of values in the interval.
+	displayObj = carpeGetElementById(display) // Get the associated display element.
+
+	displayObj.dec = decimals // Number of decimals to be displayed.
+
+	sliderObj.scale = (to - from) / length // Slider-display scale [value-change per pixel of movement].
+
+	if (orientation == 'horizontal') { // Set limits for horizontal sliders.
+		sliderObj.fromVal = from
+		xMax = length
+		yMax = 0
+	}
+	if (orientation == 'vertical') { // Set limits and scale for vertical sliders.
+		sliderObj.fromVal = to
+		xMax = 0
+		yMax = length
+		sliderObj.scale = -sliderObj.scale // Invert scale for vertical sliders. Higher is more.
+	}
+	pxLeft = carpeLeft(sliderObj.id) // Sliders horizontal position at start of slide.
+	pxTop  = carpeTop(sliderObj.id) // Sliders vertical position at start of slide.
+	xCoord = evnt.screenX // Horizontal mouse position at start of slide.
+	yCoord = evnt.screenY // Vertical mouse position at start of slide.
+	mouseover = true
+	document.onmousemove = moveSlider // Start the action if the mouse is dragged.
+	document.onmouseup = sliderMouseUp // Stop sliding.
+}
+// sliderMouseup: Handles the mouseup event after moving a slider.
+// Snaps the slider position to allowed/displayed value. 
+function sliderMouseUp()
+{
+	mouseover = false // Stop the sliding.
+	v = (displayObj.value) ? displayObj.value : 0 // Find last display value.
+	pos = (v - sliderObj.fromVal)/(sliderObj.scale) // Calculate slider position (regardless of orientation).
+
+
+	if (yMax == 0) carpeLeft(sliderObj.id, pos) // Snap horizontal slider to corresponding display position.
+	if (xMax == 0) carpeTop(sliderObj.id, pos) // Snap vertical slider to corresponding display position.
+	if (document.removeEventListener) { // Remove event listeners from 'document' (Moz&co).
+		document.removeEventListener('mousemove', moveSlider)
+		document.removeEventListener('mouseup', sliderMouseUp)
+	}
+	else if (document.detachEvent) { // Remove event listeners from 'document' (IE&co).
+		document.detachEvent('onmousemove', moveSlider)
+		document.detachEvent('onmouseup', sliderMouseUp)
+	}
+}
+
+</script>
+
+
+
+";
+
+
+
+
+
+}
+add_shortcode( 'lbox_shadow', 'lshadow' );
+
 
 
 

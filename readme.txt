@@ -4,7 +4,7 @@ Donate link:
 Tags: LW, Website, Tools, Website Tools, css, border, radius, generator, transform, box, shadow, gradient, text-shadow
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,12 @@ Provides the user with helpful css tools. Put in your data, copy the css, and  y
 -Tools Widget! :D<br>
 <br>
 <br>
+*New Shortcodes! that display a tool of your choice! :D*<br>
+1. [lraduis_tool]  Displays the radius tool as a small widget! :D<br>
+2. [lbox_shadow]   Displays the box-shadow tool as a small widget! :D<br>
+
+
+
 <br>
 Ive also added a widget so you can have all of the tools on any of your pages and/or posts! :D
 
@@ -76,10 +82,25 @@ The Widget! :D
 **(Widgets)
 	-Added a custom widget for the user to be able to have all of the tools on a page and/or post! :D
 
+= 1.2.1 =
+Major Update!<br>
+
+** (Tools Page)<br>
+	-Added contact image, when hovered shows a mini contact form for quick questions and/or help! :D<br><br>
+
+** (Help Page)<br>
+	-Major update to the look and feel of the help page! Check it out! ;)<br>
+	-Shortcodes help page! :D<br><br>
+** (Shortcodes!)
+	-New short codes to display tools on your pages and/or posts! :D<br>
+	-Shortcodes ('[lradius_tool]') Displays the radius tool as a small widget!<br
+	-Shortcodes ('[lbox_shadow']) Displays the box-shadow tool as a small widget! :D<br>
+
+
 
 == Upgrade notice ==
 
-** New Tools Widget! :D
+** Shortcodes! :D
 
 
 == Notes ==
