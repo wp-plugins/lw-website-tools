@@ -68,7 +68,7 @@ Major Update!<br>
 ** (Shortcodes!)
 	-New short codes to display tools on your pages and/or posts! :D<br>
 	-Shortcodes ('[lradius_tool]') Displays the radius tool as a small widget!<br
-	-Shortcodes ('[lbox_shadow']) Displays the box-shadow tool as a small widget! :D<br>
+	-Shortcodes ('[lbox_shadow]') Displays the box-shadow tool as a small widget! :D<br>
 
 
 = 1.2 =
