@@ -23,8 +23,8 @@ Provides the user with helpful css tools. Put in your data, copy the css, and  y
 <br>
 <br>
 *New Shortcodes! that display a tool of your choice! :D*<br>
-1. [lraduis_tool]  Displays the radius tool as a small widget! :D<br>
-2. [lbox_shadow]   Displays the box-shadow tool as a small widget! :D<br>
+ [lraduis_tool]  Displays the radius tool as a small widget! :D<br>
+[lbox_shadow]   Displays the box-shadow tool as a small widget! :D<br>
 
 
 
