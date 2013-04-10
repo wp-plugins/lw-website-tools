@@ -4,7 +4,7 @@ Donate link:
 Tags: LW, Website, Tools, Website Tools, css, border, radius, generator, transform, box, shadow, gradient, text-shadow
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,8 +23,10 @@ Provides the user with helpful css tools. Put in your data, copy the css, and  y
 <br>
 <br>
 *New Shortcodes! that display a tool of your choice! :D*<br>
- [lraduis_tool]  Displays the radius tool as a small widget! :D<br>
-[lbox_shadow]   Displays the box-shadow tool as a small widget! :D<br>
+ [lraduis_tool]  Displays the radius tool as a small widget! <br>
+[lbox_shadow]   Displays the box-shadow tool as a small widget! <br>
+**[lcss_transform]   Displays the css-transform tool as a small widget! <br>
+**[ltext_shadow]   Displays the text-shadow tool as a small widget! :D<br>
 
 
 
@@ -55,6 +57,13 @@ The Widget! :D
 
 == Changelog ==
 
+= 1.2.2 =
+
+** (Widgets)
+	-Added 2 new widgets!<br>
+		-[lcss_transform]!<br>
+		-[ltext_shadow]!<br>
+Woot! :)
 
 = 1.2.1 =
 Major Update!<br>
