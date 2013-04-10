@@ -27,6 +27,7 @@ Provides the user with helpful css tools. Put in your data, copy the css, and  y
 [lbox_shadow]   Displays the box-shadow tool as a small widget! <br>
 **[lcss_transform]   Displays the css-transform tool as a small widget! <br>
 **[ltext_shadow]   Displays the text-shadow tool as a small widget! :D<br>
+**[lcss_gradient]   Displays the gradient tool as a small widget! :D<br>
 
 
 
@@ -63,6 +64,7 @@ The Widget! :D
 	-Added 2 new widgets!<br>
 		-[lcss_transform]!<br>
 		-[ltext_shadow]!<br>
+		-[lcss_gradient]!<br>
 Woot! :)
 
 = 1.2.1 =
