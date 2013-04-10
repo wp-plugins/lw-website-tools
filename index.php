@@ -120,6 +120,59 @@ echo '
     </script>
 
   <body onload="move_init()">
+<center><h4>
+<div id="count2" align="center"></div>
+
+<script>
+
+/*
+Count down until any date script-
+By JavaScript Kit (www.javascriptkit.com)
+Over 200+ free scripts here!
+*/
+
+
+//change the text below to reflect your own,
+var before="next update!"
+var after="New update Available!"
+var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+
+function countdown(yr,m,d){
+theyear=yr;themonth=m;theday=d
+var today=new Date()
+var todayy=today.getYear()
+if (todayy < 1000)
+todayy+=1900
+var todaym=today.getMonth()
+var todayd=today.getDate()
+var todayh=today.getHours()
+var todaymin=today.getMinutes()
+var todaysec=today.getSeconds()
+var todaystring=montharray[todaym]+" "+todayd+", "+todayy+" "+todayh+":"+todaymin+":"+todaysec
+futurestring=montharray[m-1]+" "+d+", "+yr
+dd=Date.parse(futurestring)-Date.parse(todaystring)
+dday=Math.floor(dd/(60*60*1000*24)*1)
+dhour=Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1)
+dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
+dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1)
+
+
+var y=document.getElementById("count2");
+
+
+if(dday<0&&dhour<0&&dmin<0&&dsec<1){
+y.innerHTML=after
+return
+}
+else
+y.innerHTML=""+dday+ " days, "+dhour+" hours "+dmin+" minutes "+dsec+" seconds <br> until "+before
+setTimeout("countdown(theyear,themonth,theday)",1000)
+}
+//enter the count down date using the format year/month/day
+countdown(2013,4,12)
+</script>
+</h4>
+
 <div class="question" onmousedown="_move_item(this);"><center> <a class="help text" href="admin.php?page=LgW-settings"><img src="/wp-content/plugins/lw-website-tools/images/contact.png"></a><br><sub>Questions/Concerns/Suggestions?<br>
 Shoot us an email!</sub></center><form method="post" action="';
 
