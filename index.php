@@ -2685,23 +2685,23 @@ echo '?page=LgW-help" onSubmit="return validate(this);"> <center>
 
 
 <div style="height:200px;width:150px;float:left;font-size:20px;margin:15px;">
-[lradius_tool]<br><img style="height:150px;width:150px;" src="/wp-content/plugins/lw-website-tools/images/border-radius.png">
+<input style="font-size:15px;width:100px;" value="[lradius_tool]" /><br><img style="height:150px;width:150px;" src="/wp-content/plugins/lw-website-tools/images/border-radius.png">
 </div>
 
 <div style="height:200px;width:150px;float:left;font-size:20px;margin:15px;">
-[lbox_shadow]<br><img style="height:150px;width:150px;" src="/wp-content/plugins/lw-website-tools/images/box-shadow.png">
+<input style="font-size:15px;width:100px;" value="[lbox_shadow]" /><br><img style="height:150px;width:150px;" src="/wp-content/plugins/lw-website-tools/images/box-shadow.png">
 </div>
 
 <div style="height:200px;width:150px;float:left;font-size:20px;margin:15px;">
-[lcss_transform]<br><img style="height:150px;width:150px;" src="/wp-content/plugins/lw-website-tools/images/css-transform.png">
+<input style="font-size:15px;width:100px;" value="[lcss_transform]" /><br><img style="height:150px;width:150px;" src="/wp-content/plugins/lw-website-tools/images/css-transform.png">
 </div>
 
 <div style="height:200px;width:150px;float:left;font-size:20px;margin:15px;">
-[ltext_shadow]<br><img style="height:150px;width:150px;" src="/wp-content/plugins/lw-website-tools/images/text-shadow.png">
+<input style="font-size:15px;width:100px;" value="[ltext_shadow]" /><br><img style="height:150px;width:150px;" src="/wp-content/plugins/lw-website-tools/images/text-shadow.png">
 </div>
 
 <div style="height:200px;width:150px;float:left;font-size:20px;margin:15px;">
-[lcss_gradient]<br><img style="height:150px;width:150px;" src="/wp-content/plugins/lw-website-tools/images/css-gradient.png">
+<input style="font-size:15px;width:100px;" value="[lcss_gradient]" /><br><img style="height:150px;width:150px;" src="/wp-content/plugins/lw-website-tools/images/css-gradient.png">
 </div>
 
 
