@@ -64,7 +64,45 @@ function LgW_settings() {
 echo '
 
 <link rel="stylesheet" type="text/css" href="/wp-content/plugins/lw-website-tools/css/stylesheet.css" />
+<style>
+.question {
+height:50px;
+width:300px;
+color:lightgrey;
+overflow:hidden;
+position:absolute;
+right:0px;
+top:50px;
 
+}
+
+.question:hover {
+height:350px;
+width:300px;
+color:black;
+top:50px;
+right:0px;
+position:absolute;
+background-color:white;
+text-align:left;
+z-index:2000;
+
+ -moz-transition:width 0.3s, height 0.3s, background-color 0.3s, -moz-transform 0.3s;
+    -webkit-transition:width 0.3s, height 0.3s, background-color 0.3s, -webkit-transform 0.3s;
+    -o-transition:width 0.3s, height 0.3s, background-color 0.3s, -o-transform 0.3s;
+    transition:width 0.3s, height 0.3s, background-color 0.3s, transform 0.3s;
+}
+
+
+.question textarea {
+width:180px;
+}
+.question input {
+width:140px;
+}
+
+
+</style>
 
   <body onload="move_init()">
 <center><div class="question" onmousedown="_move_item(this);"><center> <a class="help text" href="admin.php?page=LgW-settings"><img src="/wp-content/plugins/lw-website-tools/images/contact.png"></a><br><sub>Questions/Concerns/Suggestions?<br>
