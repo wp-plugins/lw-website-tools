@@ -4,7 +4,7 @@ Donate link:
 Tags: LW, Website, Tools, Website Tools, css, border, radius, generator, transform, box, shadow, gradient, text-shadow
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -57,6 +57,12 @@ This is my first plugin! Thank you! :)
 The Widget! :D
 
 == Changelog ==
+
+
+= 1.2.3 =
+
+** (Major Fix)
+	-Fixed bugs that was causing the widget and short codes to not work! ;D
 
 = 1.2.2 =
 
