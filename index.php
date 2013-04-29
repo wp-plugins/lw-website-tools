@@ -7655,7 +7655,7 @@ echo '
 
 
 
-
+<br><br>
 
 
 
@@ -8812,9 +8812,9 @@ font-size:10px;
         }
     </script><center>
     <input id="tempDivName" type="hidden" />
- <a OnClick="MyFunction(';echo "'myDiv1'";echo ');"><div class="to-top"></div></a>
-<a OnClick="MyFunction(';echo "'myDiv2'";echo ');"><div class="top-right"></div></a>
-<a OnClick="MyFunction(';echo "'myDiv3'";echo ');"><div class="top-left"></div></a></center>
+ <a OnClick="MyFunction(';echo "'myDiv1'";echo ');"><div class="to-top" style="height:25px;width:25px;"></div></a>
+<a OnClick="MyFunction(';echo "'myDiv2'";echo ');"><div class="top-right" style="height:25px;width:25px;"></div></a>
+<a OnClick="MyFunction(';echo "'myDiv3'";echo ');"><div class="top-left" style="height:25px;width:25px;"></div></a></center>
 
     <div id="myDiv1" style="display:none">
      <script type="text/javascript">';
@@ -9125,7 +9125,7 @@ echo '			return false;
 
          </form>
 <div id="temple10" style="float:right;"></div>
-    <div id="out10" style="margin-top:-43px;margin-left:5px;float:right;">
+    <div id="out10" style="margin-left:5px;float:right;">
     </div>
 </body>
 
@@ -9140,7 +9140,7 @@ echo '			return false;
 </div>
 
 
-
+<br><br>
 
 
 
