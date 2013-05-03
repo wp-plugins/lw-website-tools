@@ -2447,7 +2447,7 @@ y.innerHTML=""+dday+ " days, "+dhour+" hours "+dmin+" minutes "+dsec+" seconds <
 setTimeout("countdown(theyear,themonth,theday)",1000)
 }
 //enter the count down date using the format year/month/day
-countdown(2013,5,10)
+countdown(2013,4,12)
 </script>
 </h4>
 
