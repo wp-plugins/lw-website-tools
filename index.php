@@ -9125,7 +9125,7 @@ echo '			return false;
 
          </form>
 <div id="temple10" style="float:right;"></div>
-    <div id="out10" style="margin-left:5px;float:right;">
+    <div id="out10" style="margin-top:-49px;margin-left:5px;float:right;">
     </div>
 </body>
 

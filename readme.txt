@@ -39,7 +39,7 @@ This is my first plugin! Thank you! :)
 == Installation ==
 
 1. Download LW Website Tools from wordpress.org
-2. Upload `LW-Website-Tools` to the `/wp-content/plugins/` directory
+2. Upload `LW-Website-Tools` to the = /wp-content/plugins/ = directory
 3. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently asked questions ==
