@@ -4,7 +4,7 @@ Donate link:
 Tags: LW, Website, Tools, Website Tools, css, border, radius, generator, transform, box, shadow, gradient, text-shadow
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 1.2.3
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,13 @@ The Widget! :D
 
 == Changelog ==
 
+= 2.0 =
+
+* HUGE Update!
+
+** Complete redesign of the tools page!
+** (Tools Page)
+	-Fixed the text shadow generator to correctly output the css for the user to copy! :)
 
 = 1.2.3 =
 
