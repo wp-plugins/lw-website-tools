@@ -117,12 +117,13 @@ width:140px;
 
 
 
-#out textarea, #out2 textarea, #out3 textarea, #out4 textarea, #out5 textarea, #out6 textarea, #out7 textarea, #out8 textarea, #out10 textarea {
+#out textarea, #out1 textarea, #out2 textarea, #out3 textarea, #out4 textarea, #out5 textarea, #out6 textarea, #out7 textarea, #out8 textarea, #out10 textarea {
 background-color: #fff; 
 background-image: 
 linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
 linear-gradient(#eee .1em, transparent .1em);
-background-size: 100% 1.2em;}
+background-size: 100% 1.2em;
+}
 
 
 html
@@ -459,7 +460,7 @@ filter: alpha(opacity=50);
 z-index:0;
 }
 
-.top_block1
+.top_block1, .top_block2, .top_block3, .top_block4, .top_block5
 {
 color:white;
 position: fixed;
@@ -660,7 +661,7 @@ Bottom Left<br>
 Bottom Right<br>
 <input id="bottom_right" value="50" style="width:50px;"></input><br>
 </form>
-<div id="temple3" style="float:right;"></div><div id="out2">
+<div id="temple3" style="float:right;"></div><div id="out">
 
 <textarea style="border: 6px solid #f22f74;height:100px;width:400px;">
 /*LW-Website-Tools Border Radius Style*/
@@ -719,7 +720,7 @@ Blur Radius<br>
 Spread<br>
 <input id="spread" value="3" style="width:50px;"></input><br>
 </form>
-<div id="temple1" style="float:right;"></div><div id="out2">
+<div id="temple1" style="float:right;"></div><div id="out1">
 
 <textarea style="border: 6px solid #f22f74;height:100px;width:400px;">
 /*LW-Website-Tools Box-Shadow*/
@@ -816,7 +817,7 @@ Shadow Color<br>
 
 
 </form>
-<div id="temple2" style="float:right;color:black;"><br><br><br><br>Text! :D</div><div id="out2">
+<div id="temple2" style="float:right;color:black;"><br><br><br><br>Text! :D</div><div id="out3">
 
 <textarea style="border: 6px solid #f22f74;height:100px;width:400px;">
 /*LW-Website-Tools Text-Shadow*/
@@ -870,7 +871,7 @@ Color
 
 
 </form>
-<div id="temple7" style="float:right;color:black;"></div><div id="out2">
+<div id="temple7" style="float:right;color:black;"></div><div id="out4">
 
 <textarea style="border: 6px solid #f22f74;height:100px;width:400px;">
 /*LW-Website-Tools Gradient*/
@@ -1003,7 +1004,7 @@ echo "	    function test2(){
 ";
 
 
-			echo "document.getElementById('out2').innerHTML =";
+			echo "document.getElementById('out').innerHTML =";
 
 
 echo ' "<style>#temple3" + "{" + "border-top-left-radius:" + tl + "px;border-top-right-radius:" + tr + "px;border-bottom-right-radius:" + br + "px;border-bottom-left-radius:" + bl + "px;-moz-border-top-left-radius:" + tl + "px;-moz-border-top-right-radius:" + tr + "px;-moz-border-bottom-right-radius:" + br + "px;-moz-border-bottom-left-radius:" + bl + "px;-webkit-border-top-left-radius:" + tl + "px;-webkit-border-top-right-radius:" + tr + "px;-webkit-border-bottom-right-radius:" + br + "px;-webkit-border-bottom-left-radius:" + bl + "px;" + "}" + "</style>" + "<div id=';echo "''>";echo '</div>" + "';
@@ -1013,7 +1014,7 @@ echo "<textarea style='border: 6px solid #f22f74;height:100px;width:400px;'";
 echo '>" + "/*LW-Website-Tools Border Radius Style*/" + "&#013;" + "&#013;" + "border-top-left-radius:" + tl + "px;" + "&#013;" + "border-top-right-radius:" + tr + "px;" + "&#013;" + "border-bottom-right-radius:" + br + "px;" + "&#013;" + "border-bottom-left-radius:" + bl + "px;" + "&#013;" + "&#013;" + "-moz-border-top-left-radius:" + tl + "px;" + "&#013;" + "-moz-border-top-right-radius:" + tr + "px;" + "&#013;" + "-moz-border-bottom-right-radius:" + br + "px;" + "&#013;" + "-moz-border-bottom-left-radius:" + bl + "px;" + "&#013;" + "&#013;" + "-webkit-border-top-left-radius:" + tl + "px;" + "&#013;" + "-webkit-border-top-right-radius:" + tr + "px;" + "&#013;" + "-webkit-border-bottom-right-radius:" + br + "px;" + "&#013;" + "-webkit-border-bottom-left-radius:" + bl + "px;" + "</textarea>" + "<div id=';
 echo "''>"; echo '</div>";';
 echo "
-			document.getElementById('out2').style.display ="; echo ' "block";';
+			document.getElementById('out').style.display ="; echo ' "block";';
 
 echo '			return false;
 		}
@@ -1036,7 +1037,7 @@ Bottom Left
 Bottom Right
 <input id="bottom_right"></input>
 </form>
-<div id="temple3" style="float:right;"></div><div id="out2"></div>
+<div id="temple3" style="float:right;"></div><div id="out"></div>
 
 
 
@@ -1072,17 +1073,17 @@ echo "	    function test(){
 			var sp = document.getElementById('spread').value;";
 
 
-			echo "document.getElementById('out').innerHTML =";
+			echo "document.getElementById('out1').innerHTML =";
 
 
 echo ' "<style>#temple1" + "{" + "box-shadow:" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "-webkit-box-shadow:" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + + sp + "px;" + "-moz-box-shadow" + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "}</style>" + "<div id=';echo "''>";echo '</div>" + "';
 
-echo "<textarea style='height:100px;width:300px;'";
+echo "<textarea style='border: 6px solid #f22f74;height:100px;width:400px;'";
 
 echo '>" + "/*LW-Website-Tools Box-Shadow*/" + "&#013" + "box-shadow: " + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "&#013" + "-webkit-box-shadow: " + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "&#013" + "-moz-box-shadow: " + hl + "px" + " " + vl + "px" + " " + br + "px" + " " + sp + "px;" + "</textarea>" + "<div id=';
 echo "''>"; echo '</div>";';
 echo "
-			document.getElementById('out').style.display ="; echo ' "block";';
+			document.getElementById('out1').style.display ="; echo ' "block";';
 
 echo '			return false;
 		}
@@ -1092,7 +1093,7 @@ echo '			return false;
 <body>
 <div style="background-color:purple;padding:10px;float:right;">
 
-<div id="temple1"></div><div id="out"></div>
+<div id="temple1"></div><div id="out1"></div>
 </div>
 
     <form action="" style="background-color:white;float:left;padding:15px;;" onsubmit="return test()">
@@ -1184,17 +1185,17 @@ echo "	    function test33(){
 			var sy = document.getElementById('skew_y').value;";
 
 
-			echo "document.getElementById('out3').innerHTML =";
+			echo "document.getElementById('out2').innerHTML =";
 
 
 echo ' "<style>#temple4" + "{" + "" + "-moz-transform: scale(" + se + ") rotate(" + re + "deg) translateX(" + tx + "px) translateY(" + ty + "px) skewX(" + sx + "deg) skewY(" + sy + "deg);" + "-webkit-transform: scale(" + se + ") rotate(" + re + "deg) translateX(" + tx + "px) translateY(" + ty + "px) skewX(" + sx + "deg) skewY(" + sy + "deg);" + "-0-transform: scale(" + se + ") rotate(" + re + "deg) translateX(" + tx + "px) translateY(" + ty + "px) skewX(" + sx + "deg) skewY(" + sy + "deg);" + "-ms-transform: scale(" + se + ") rotate(" + re + "deg) translateX(" + tx + "px) translateY(" + ty + "px) skewX(" + sx + "deg) skewY(" + sy + "deg);" + "transform: scale(" + se + ") rotate(" + re + "deg) translateX(" + tx + "px) translateY(" + ty + "px) skewX(" + sx + "deg) skewY(" + sy + "deg);" + "}</style>" + "<div id=';echo "''>";echo '</div><br>" + "';
 
-echo "<textarea style='height:150px;width:300px;border:solid 2px #ccc;'";
+echo "<textarea style='border: 6px solid #f22f74;height:100px;width:400px;'";
 
 echo '>" + "/*LW-Website-Tools Transform*/" + "&#013;" + "-moz-transform: scale(" + se + ") rotate(" + re + "deg) translateX(" + tx + "px) translateY(" + ty + "px) skewX(" + sx + "deg) skewY(" + sy + "deg);" + "&#013;" + "-webkit-transform: scale(" + se + ") rotate(" + re + "deg) translateX(" + tx + "px) translateY(" + ty + "px) skewX(" + sx + "deg) skewY(" + sy + "deg);" + "&#013;" + "-0-transform: scale(" + se + ") rotate(" + re + "deg) translateX(" + tx + "px) translateY(" + ty + "px) skewX(" + sx + "deg) skewY(" + sy + "deg);" + "&#013;" + "-ms-transform: scale(" + se + ") rotate(" + re + "deg) translateX(" + tx + "px) translateY(" + ty + "px) skewX(" + sx + "deg) skewY(" + sy + "deg);" + "&#013;" + "transform: scale(" + se + ") rotate(" + re + "deg) translateX(" + tx + "px) translateY(" + ty + "px) skewX(" + sx + "deg) skewY(" + sy + "deg);"+ "</textarea>" + "<div id=';
 echo "''>"; echo '</div>";';
 echo "
-			document.getElementById('out3').style.display ="; echo ' "block";';
+			document.getElementById('out2').style.display ="; echo ' "block";';
 
 echo '			return false;
 		}
@@ -1213,7 +1214,7 @@ alert("Scales the box according to the number. Use 1.0 - 2.0 to be safe :)");
 
 <body>
 <div style="background-color:purple;padding:10px;float:right;">
-<div id="temple4"></div><div id="out3"></div>
+<div id="temple4"></div><div id="out2"></div>
 </div>
     <form  style="background-color:white;float:left;padding:15px;" action="" onsubmit="return test33()">
 
@@ -1346,18 +1347,18 @@ echo "	    function test5(){
 			var sc = document.getElementById('shadow_color').value;";
 
 
-			echo "document.getElementById('out5').innerHTML =";
+			echo "document.getElementById('out3').innerHTML =";
 
 
 echo ' "<style>#temple2" + "{" + "" + "text-shadow: " + hl + "px " + vl + "px " + bl + "px #" + sc + ";" + "filter: dropshadow(color=#" + sc + ", offx=" + hl + ", offy=" + vl + ");" + "}" + "</style>" + "<div id=';echo "'' style='color:white;'>";echo '</div><br>" + "';
 
 
-echo "<textarea style='height:150px;width:300px;border:solid 2px #ccc;'";
+echo "<textarea style='border: 6px solid #f22f74;height:100px;width:400px;'";
 
 echo '>" + "/*LW-Website-Tools Text-Shadow*/" + "&#013;" + "&#013;" + "text-shadow: " + hl + "px " + vl + "px " + bl + "px #" + sc + ";" + "&#013;" + "filter: dropshadow(color=#" + sc + ", offx=" + hl + ", offy=" + vl + ");" + "</textarea>" + "<div id=';
 echo "''>"; echo '</div>";';
 echo "
-			document.getElementById('out5').style.display ="; echo ' "block";';
+			document.getElementById('out3').style.display ="; echo ' "block";';
 
 echo '			return false;
 		}
@@ -1454,7 +1455,7 @@ echo '<body>
 echo '
 
     </form>
-    <div id="out5"style="float:right;"></div>
+    <div id="out3"style="float:right;"></div>
 </body>
 </div>
 <div id="client5" style="display:none;">
@@ -1497,14 +1498,14 @@ echo "	    function test7(){
 			var snn = document.getElementById('the_second_color_number').value;";
 
 
-			echo "document.getElementById('out7').innerHTML =";
+			echo "document.getElementById('out4').innerHTML =";
 
 
 echo ' "<style>#temple7" + "{" + "background-image: -moz-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" +  "}" + "#horizontal_slider_71 { background-color: #" + sn + ";}" + "#horizontal_slider_7 { background-color: #" + fc + ";}" + "#the_first_color_number { background-color: #" + fc + ";}" + "#the_second_color_number { background-color: #" + sn + ";}" + "/* IE 10 Consumer Preview */" + "background-image: -ms-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "/* Opera */" + "background-image: -o-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "/* Webkit (Safari/Chrome 10) */" + "background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #" + fc + "), color-stop(1, #" + sn + ")); " + "/* Webkit (Chrome 11+) */" + + "background-image: -webkit-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "/* W3C Markup, IE10 Release Preview */" + + "background-image: linear-gradient(to bottom, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "</style>" + "<div id=';echo "''>";echo '</div>" + "';
 
-echo "<textarea style='height:100px;width:500px;'";echo '>" + "/*LW-Website-Tools Gradient*/" + "&#013;" + "/* Mozilla Firefox */" + "&#013;" + "background-image: -moz-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "&#013;" + "/* IE 10 Consumer Preview */" + "&#013;" + "background-image: -ms-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "&#013;" + "/* Opera */" + "&#013;" + "background-image: -o-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "&#013;" + "/* Webkit (Safari/Chrome 10) */" + "&#013;" + "background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #" + fc + "), color-stop(1, #" + sn + ")); " + "&#013;" + "/* Webkit (Chrome 11+) */" + "&#013;" + "background-image: -webkit-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" +  "&#013;" + "/* W3C Markup, IE10 Release Preview */" + "&#013;" + "background-image: linear-gradient(to bottom, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "</textarea>" + "<div id=';echo "''>"; echo '</div>";';
+echo "<textarea style='border: 6px solid #f22f74;height:100px;width:400px;'";echo '>" + "/*LW-Website-Tools Gradient*/" + "&#013;" + "/* Mozilla Firefox */" + "&#013;" + "background-image: -moz-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "&#013;" + "/* IE 10 Consumer Preview */" + "&#013;" + "background-image: -ms-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "&#013;" + "/* Opera */" + "&#013;" + "background-image: -o-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "&#013;" + "/* Webkit (Safari/Chrome 10) */" + "&#013;" + "background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #" + fc + "), color-stop(1, #" + sn + ")); " + "&#013;" + "/* Webkit (Chrome 11+) */" + "&#013;" + "background-image: -webkit-linear-gradient(top, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" +  "&#013;" + "/* W3C Markup, IE10 Release Preview */" + "&#013;" + "background-image: linear-gradient(to bottom, #" + fc + " " + fcn + "%, #" + sn + " " + snn + "%);" + "</textarea>" + "<div id=';echo "''>"; echo '</div>";';
 echo "
-			document.getElementById('out7').style.display ="; echo ' "block";';
+			document.getElementById('out4').style.display ="; echo ' "block";';
 
 echo '			return false;
 		}
@@ -1592,7 +1593,7 @@ echo '			return false;
 
          </form>
 <div id="temple7" style="float:right;"><br><br><br><br><br><br><br><br><br><br><br><br>Your Text! :D</div>
-    <div id="out7" style="float:right;">
+    <div id="out4" style="float:right;">
     </div>
 </body>
 
