@@ -66,6 +66,10 @@ The Widget! :D
 ** (Tools Page)
 	-Fixed the text shadow generator to correctly output the css for the user to copy! :)
 
+**(Tools page)
+	-fixed alignment issue when form was submitted! :) 
+	-fixed text area for some tools not working! :D
+
 = 1.2.3 =
 
 ** (Major Fix)
