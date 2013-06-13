@@ -63,12 +63,13 @@ The Widget! :D
 * HUGE Update!
 
 ** Complete redesign of the tools page!
-** (Tools Page)
-	-Fixed the text shadow generator to correctly output the css for the user to copy! :)
+<br>
+** (Tools Page)<br>
+	-Fixed the text shadow generator to correctly output the css for the user to copy! :)<br>
 
-**(Tools page)
-	-fixed alignment issue when form was submitted! :) 
-	-fixed text area for some tools not working!
+**(Tools page)<br>
+	-fixed alignment issue when form was submitted! :) <br>
+	-fixed text area for some tools not working!<br>
 
 = 1.2.3 =
 
