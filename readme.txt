@@ -68,7 +68,7 @@ The Widget! :D
 
 **(Tools page)
 	-fixed alignment issue when form was submitted! :) 
-	-fixed text area for some tools not working! :D
+	-fixed text area for some tools not working!
 
 = 1.2.3 =
 
