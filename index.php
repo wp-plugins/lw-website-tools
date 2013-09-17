@@ -29,9 +29,6 @@ License: lw_tools
 /* Include Files */
 /*----------------------------------------------------------------------*/\
 
-register_activation_hook();
-register_deactivation_hook();
-register_uninstall_hook();
 add_action('admin_menu', 'LgW_menu_pages');
 
 function LgW_menu_pages() {
